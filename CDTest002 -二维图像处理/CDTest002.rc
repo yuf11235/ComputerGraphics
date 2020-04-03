@@ -102,6 +102,7 @@ BEGIN
     BUTTON      ID_MUTIPLYLINE
     BUTTON      ID_BIN
     BUTTON      ID_CLIPPOLYLINE
+    BUTTON      ID_ONMOVE
 END
 
 
@@ -404,6 +405,7 @@ BEGIN
     ID_MUTIPLYLINE          "画多条分离的线"
     ID_BIN                  "删除所有东西"
     ID_CLIPPOLYLINE         "use the rect area to clip the polyline"
+    ID_ONMOVE               "平移"
 END
 
 #endif    // Chinese (中国) resources

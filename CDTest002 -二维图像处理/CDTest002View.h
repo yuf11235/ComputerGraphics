@@ -11,8 +11,8 @@
 
 #include <afxtempl.h>
 #include "CMDlg.h"
-#define PI 3.1415726
-
+#define PI 3.1415926
+#include <math.h>
 class CCDTest002Doc;
 
 
@@ -94,6 +94,7 @@ protected:
 	afx_msg void OnMutiplyline();
 	afx_msg void OnBin();
 	afx_msg void OnClippolyline();
+	afx_msg void OnOnMove();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

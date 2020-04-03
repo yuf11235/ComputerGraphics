@@ -48,7 +48,7 @@ Type=0
 HeaderFile=MainFrm.h
 ImplementationFile=MainFrm.cpp
 Filter=T
-LastObject=CMainFrame
+LastObject=ID_ONMOVE
 BaseClass=CFrameWnd
 VirtualFilter=fWC
 
@@ -128,7 +128,8 @@ Command12=ID_POLYGON
 Command13=ID_MUTIPLYLINE
 Command14=ID_BIN
 Command15=ID_CLIPPOLYLINE
-CommandCount=15
+Command16=ID_ONMOVE
+CommandCount=16
 
 [DLG:IDD_DIALOG1]
 Type=1
