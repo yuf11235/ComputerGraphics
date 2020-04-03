@@ -455,9 +455,50 @@ void CCDTest002View::OnLButtonUp(UINT nFlags, CPoint point)
 		{
 			this->m_iClipFlag = 2;
 		}
+
 		if(this->m_iTypeFlag == 1)
 		{
 			GetMatrix(m_Matrix, 0, 0, this->m_BottomRightPoint.x - this->m_TopLeftPoint.x, this->m_BottomRightPoint.y - this->m_TopLeftPoint.y, 0);
+			GetNewPoint();
+			this->m_iTypeFlag = 0;
+		}
+		else if(this->m_iTypeFlag == 2)
+		{
+			int a, b, c;
+			double m_dblY, angle;
+			int x0, y0, x1, y1;
+			double y_ledge;
+
+			x0 = m_TopLeftPoint.x;
+			y0 = m_TopLeftPoint.y;
+			x1 = m_BottomRightPoint.x;
+			y1 = m_BottomRightPoint.y;
+			a = y0 - y1;
+			b = x1 - x0;
+			c = x0*y1 - x1*y0;
+
+			y_ledge = m_dblY = (-1)*c / (double) b;
+			y_ledge = (int)(m_dblY+0.5);
+
+			angle = atan((-1)*(double(a)) / (double)b);
+			angle = angle*180 / PI;
+
+			double m_Matrix0[3][3];
+			// void GetMatrix(double matrix[][3], int iFlag, double rotateAngle, double x_dis, double y_dis, double dbl_zoom);
+			GetMatrix(this->m_Matrix, 0, 0, 0, (-1)*y_ledge, 0);
+
+			GetMatrix(m_Matrix0, 1, (-1)*angle, 0, 0, 0);
+			MatrixXMatrix(this->m_Matrix, m_Matrix0);
+
+			// GetMatrix(m_Matrix0, 2, 0, 0, 0, 0);
+			// MatrixXMatrix(this->m_Matrix, m_Matrix0);
+
+			GetMatrix(m_Matrix0, 1, angle, 0, 0, 0);
+			MatrixXMatrix(this->m_Matrix, m_Matrix0);
+
+			GetMatrix(this->m_Matrix, 0, 0, 0, y_ledge, 0);
+			MatrixXMatrix(this->m_Matrix, m_Matrix0);
+
 			GetNewPoint();
 			this->m_iTypeFlag = 0;
 		}
@@ -848,6 +889,10 @@ void CCDTest002View::GetMatrix(double matrix[][3], int iFlag, double rotateAngle
 		matrix[0][1] = sin(PI/180 * rotateAngle);
 		matrix[1][0] = (-1) * sin(PI/180 * rotateAngle);
 		matrix[1][1] = cos(PI/180 * rotateAngle);
+		// matrix[0][0] = cos(PI/180 * rotateAngle);
+		// matrix[0][1] = sin(PI/180 * rotateAngle);
+		// matrix[1][0] = (-1) * sin(PI/180 * rotateAngle);
+		// matrix[1][1] = cos(PI/180 * rotateAngle);
 		// matrix = [[cos(0)  sin(0) 0]
 		// 			 [-sin(0) cos(0) 0]
 		// 			 [0       0      1]]
@@ -908,6 +953,26 @@ void CCDTest002View::GetNewPoint()
 	m_point_Array.Append(m_point_Array_new);
 }
 
+void CCDTest002View::MatrixXMatrix(double matrix0[][3], double matrix1[][3])
+{
+	double matrix2[3][3];
+
+	for(int i=0; i<3; i++)
+	{
+		for(int j=0; j<3; j++)
+		{
+			matrix2[i][j] = matrix0[i][0]*matrix1[0][j] + matrix0[i][1]*matrix1[1][j] + matrix0[i][2]*matrix1[2][j];
+		}
+	}
+	for(i=0; i<3; i++)
+	{
+		for(int j=0; j<3; j++)
+		{
+			matrix0[i][j] = matrix2[i][j];
+		}
+	}
+}
+
 
 
 void CCDTest002View::OnFillcolor() 
@@ -951,6 +1016,7 @@ void CCDTest002View::OnBin()
 	this->m_iFillFLag = 0;
 	this->m_iClipFlag = 0;
 	this->m_iGetTwoPoint = 0;
+	this->m_iTypeFlag = 0;
 	Invalidate();
 }
 
@@ -970,7 +1036,7 @@ void CCDTest002View::OnClippolyline()
 void CCDTest002View::OnOnMove() 
 {
 	// TODO: Add your command handler code here
-	// m_iFlag = 3;// 平移标识符
+	// 平移
 	this->m_iTypeFlag = 1;
 	this->m_iGetTwoPoint = 1;
 	Invalidate(TRUE);

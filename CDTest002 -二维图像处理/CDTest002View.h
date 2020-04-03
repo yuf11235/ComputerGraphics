@@ -55,7 +55,7 @@ public:
 	// iFlag/: 0-移动， 1-旋转， 2-x轴镜像， 3-y轴镜像， 4-x轴错移， 5-y轴错移， 6-比例放缩
 	void GetMatrix(double matrix[][3], int iFlag, double rotateAngle, double x_dis, double y_dis, double dbl_zoom);
 	void GetNewPoint();
-	void MatrixMatrix(double matrix0[][3], double matrix1[][3]);
+	void MatrixXMatrix(double matrix0[][3], double matrix1[][3]);
 
 
 
