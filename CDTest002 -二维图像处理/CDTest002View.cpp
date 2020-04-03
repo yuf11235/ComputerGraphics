@@ -31,6 +31,7 @@ BEGIN_MESSAGE_MAP(CCDTest002View, CView)
 	ON_COMMAND(ID_MUTIPLYLINE, OnMutiplyline)
 	ON_COMMAND(ID_BIN, OnBin)
 	ON_COMMAND(ID_CLIPPOLYLINE, OnClippolyline)
+	ON_COMMAND(ID_ONMOVE, OnOnMove)
 	//}}AFX_MSG_MAP
 	// Standard printing commands
 	ON_COMMAND(ID_FILE_PRINT, CView::OnFilePrint)
@@ -813,7 +814,7 @@ void CCDTest002View::CutPolyLine()
 	this->m_point_Array.Append(m_point_Array4);
 }
 
-void GetMatrix(double matrix[][3], int iFlag, double rotateAngle, double x_dis, double y_dis, double dbl_zoom)
+void CCDTest002View::GetMatrix(double matrix[][3], int iFlag, double rotateAngle, double x_dis, double y_dis, double dbl_zoom)
 {
 	// iFlag: 0-移动， 1-旋转， 2-x轴镜像， 3-y轴镜像， 4-x轴错移， 5-y轴错移， 6-比例放缩
 	for(int i=0; i<3; i++)
@@ -945,4 +946,13 @@ void CCDTest002View::OnClippolyline()
 	else
 		MessageBox("not closed!");
 	Invalidate();
+}
+
+void CCDTest002View::OnOnMove() 
+{
+	// TODO: Add your command handler code here
+	m_iFlag = 3;// 平移标识符
+	this->m_BottomRightPoint = this->m_TopLeftPoint;
+	m_iMoveFlag = 0;
+	Invalidate(TRUE);
 }
