@@ -465,7 +465,7 @@ void CCDTest002View::OnLButtonUp(UINT nFlags, CPoint point)
 		else if(this->m_iTypeFlag == 2)
 		{
 			int a, b, c;
-			double m_dblY, angle;
+			double m_dblY, angle; 
 			int x0, y0, x1, y1;
 			double y_ledge;
 
@@ -475,26 +475,27 @@ void CCDTest002View::OnLButtonUp(UINT nFlags, CPoint point)
 			y1 = m_BottomRightPoint.y;
 			a = y0 - y1;
 			b = x1 - x0;
+ 
 			c = x0*y1 - x1*y0;
 
 			y_ledge = m_dblY = (-1)*c / (double) b;
 			y_ledge = (int)(m_dblY+0.5);
 
 			angle = atan((-1)*(double(a)) / (double)b);
-			angle = angle*180 / PI;
+			angle = angle*180 / PI; 
 
 			double m_Matrix0[3][3];
 			// void GetMatrix(double matrix[][3], int iFlag, double rotateAngle, double x_dis, double y_dis, double dbl_zoom);
 			GetMatrix(this->m_Matrix, 0, 0, 0, (-1)*y_ledge, 0);
 
-			GetMatrix(m_Matrix0, 1, (-1)*angle, 0, 0, 0);
-			MatrixXMatrix(this->m_Matrix, m_Matrix0);
-
-			// GetMatrix(m_Matrix0, 2, 0, 0, 0, 0);
+			// GetMatrix(m_Matrix0, 1, (-1)*angle, 0, 0, 0);
 			// MatrixXMatrix(this->m_Matrix, m_Matrix0);
 
-			GetMatrix(m_Matrix0, 1, angle, 0, 0, 0);
+			GetMatrix(m_Matrix0, 2, 0, 0, 0, 0);
 			MatrixXMatrix(this->m_Matrix, m_Matrix0);
+
+			// GetMatrix(m_Matrix0, 1, angle, 0, 0, 0);
+			// MatrixXMatrix(this->m_Matrix, m_Matrix0);
 
 			GetMatrix(this->m_Matrix, 0, 0, 0, y_ledge, 0);
 			MatrixXMatrix(this->m_Matrix, m_Matrix0);
