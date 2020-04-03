@@ -813,7 +813,78 @@ void CCDTest002View::CutPolyLine()
 	this->m_point_Array.Append(m_point_Array4);
 }
 
+void GetMatrix(double matrix[][3], int iFlag, double rotateAngle, double x_dis, double y_dis, double dbl_zoom)
+{
+	// iFlag: 0-移动， 1-旋转， 2-x轴镜像， 3-y轴镜像， 4-x轴错移， 5-y轴错移， 6-比例放缩
+	for(int i=0; i<3; i++)
+	{
+		for(int j=0; j<3; j++)
+		{
+			matrix[i][j] = 0;
+		}
+	}
+	matrix[0][0] = 1;
+	matrix[1][1] = 1;
+	matrix[2][2] = 1;
+	// matrix = [[1 0 0]
+	// 			 [0 1 0]
+	// 			 [0 0 1]]
 
+
+	if(iFlag == 0)//0-移动
+	{
+		matrix[2][0] = x_dis;
+		matrix[2][1] = y_dis;
+		// matrix = [[1     0     0]
+		// 			 [0     1     0]
+		// 			 [x_dis y_dis 1]]
+	}
+	else if(iFlag == 1)//1-旋转， 
+	{
+		matrix[0][0] = cos(PI/180 * rotateAngle);
+		matrix[0][1] = sin(PI/180 * rotateAngle);
+		matrix[1][0] = (-1) * sin(PI/180 * rotateAngle);
+		matrix[1][1] = cos(PI/180 * rotateAngle);
+		// matrix = [[cos(0)  sin(0) 0]
+		// 			 [-sin(0) cos(0) 0]
+		// 			 [0       0      1]]
+	}
+	else if(iFlag == 2)//2-x轴镜像， 
+	{
+		matrix[1][1] = -1;
+		// matrix = [[1 0  0]
+		// 			 [0 -1 0]
+		// 			 [0 0  1]]
+	}
+	else if(iFlag == 3)//3-y轴镜像
+	{
+		matrix[0][0] = -1;
+		// matrix = [[-1 0 0]
+		// 			 [0  1 0]
+		// 			 [0  0 1]]
+	}
+	else if(iFlag == 4)//4-x轴错移
+	{
+		matrix[1][0] = x_dis;
+		// matrix = [[1     0 0]
+		// 			 [x_dis 1 0]
+		// 			 [0     0 1]]
+	}
+	else if(iFlag == 5)//5-y轴错移
+	{
+		matrix[0][1] = y_dis;
+		// matrix = [[1 y_dis 0]
+		// 			 [0 1     0]
+		// 			 [0 0     1]]
+	}
+	else if(iFlag == 6)//6-比例放缩
+	{
+		matrix[2][2] = dbl_zoom;//<1-放大，>1-缩小
+		// matrix = [[1 0 0]
+		// 			 [0 1 0]
+		// 			 [0 0 dbl_zoom]]
+	}
+}
 
 
 
