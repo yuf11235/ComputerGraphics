@@ -53,6 +53,7 @@ CCDTest002View::CCDTest002View()
 	this->m_iClipFlag = 0;
 	this->m_iDeleteFlag = 0;
 	this->m_iGetTwoPoint = 0;
+	this->m_iMoveFlag = 0;
 }
 
 CCDTest002View::~CCDTest002View()
@@ -450,7 +451,15 @@ void CCDTest002View::OnLButtonUp(UINT nFlags, CPoint point)
 	{
 		this->m_BottomRightPoint = point;
 		if(this->m_iClipFlag == 1)
+		{
 			this->m_iClipFlag = 2;
+		}
+		if(this->m_iMoveFlag == 1)
+		{
+			GetMatrix(m_Matrix, 0, 0, this->m_BottomRightPoint.x - this->m_TopLeftPoint.x, this->m_BottomRightPoint.y - this->m_TopLeftPoint.y, 0);
+			GetNewPoint();
+			m_iMoveFlag = 0;
+		}
 	}
 	// else if(this->m_iClipFlag == 4)
 	// {
@@ -879,6 +888,24 @@ void CCDTest002View::GetMatrix(double matrix[][3], int iFlag, double rotateAngle
 	}
 }
 
+void CCDTest002View::GetNewPoint()
+{
+	CArray<CPoint, CPoint> m_point_Array_new;
+	CPoint point_new;
+	double s_dbl;
+	for(int i=0; i<m_point_Array.GetSize(); i++)
+	{
+		point_new.x = m_point_Array.GetAt(i).x * m_Matrix[0][0] + m_point_Array.GetAt(i).y * m_Matrix[1][0] + m_Matrix[2][0];
+		point_new.y = m_point_Array.GetAt(i).x * m_Matrix[0][1] + m_point_Array.GetAt(i).y * m_Matrix[1][1] + m_Matrix[2][1];
+		s_dbl = m_Matrix[0][2] + m_Matrix[1][2] + m_Matrix[2][2];
+		point_new.x /= s_dbl;
+		point_new.y /= s_dbl;
+
+		m_point_Array_new.Add(point_new);
+	}
+	m_point_Array.RemoveAll();
+	m_point_Array.Append(m_point_Array_new);
+}
 
 
 
@@ -943,7 +970,7 @@ void CCDTest002View::OnOnMove()
 {
 	// TODO: Add your command handler code here
 	// m_iFlag = 3;// 平移标识符
-	this->m_BottomRightPoint = this->m_TopLeftPoint;
-	m_iMoveFlag = 0;
+	this->m_iMoveFlag = 1;
+	this->m_iGetTwoPoint = 1;
 	Invalidate(TRUE);
 }
