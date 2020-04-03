@@ -32,6 +32,7 @@ BEGIN_MESSAGE_MAP(CCDTest002View, CView)
 	ON_COMMAND(ID_BIN, OnBin)
 	ON_COMMAND(ID_CLIPPOLYLINE, OnClippolyline)
 	ON_COMMAND(ID_ONMOVE, OnOnMove)
+	ON_COMMAND(ID_MIRROR, OnMirror)
 	//}}AFX_MSG_MAP
 	// Standard printing commands
 	ON_COMMAND(ID_FILE_PRINT, CView::OnFilePrint)
@@ -53,7 +54,7 @@ CCDTest002View::CCDTest002View()
 	this->m_iClipFlag = 0;
 	this->m_iDeleteFlag = 0;
 	this->m_iGetTwoPoint = 0;
-	this->m_iMoveFlag = 0;
+	this->m_iTypeFlag = 0;
 }
 
 CCDTest002View::~CCDTest002View()
@@ -454,11 +455,11 @@ void CCDTest002View::OnLButtonUp(UINT nFlags, CPoint point)
 		{
 			this->m_iClipFlag = 2;
 		}
-		if(this->m_iMoveFlag == 1)
+		if(this->m_iTypeFlag == 1)
 		{
 			GetMatrix(m_Matrix, 0, 0, this->m_BottomRightPoint.x - this->m_TopLeftPoint.x, this->m_BottomRightPoint.y - this->m_TopLeftPoint.y, 0);
 			GetNewPoint();
-			m_iMoveFlag = 0;
+			this->m_iTypeFlag = 0;
 		}
 	}
 	// else if(this->m_iClipFlag == 4)
@@ -970,7 +971,15 @@ void CCDTest002View::OnOnMove()
 {
 	// TODO: Add your command handler code here
 	// m_iFlag = 3;// 平移标识符
-	this->m_iMoveFlag = 1;
+	this->m_iTypeFlag = 1;
+	this->m_iGetTwoPoint = 1;
+	Invalidate(TRUE);
+}
+
+void CCDTest002View::OnMirror() 
+{
+	// TODO: Add your command handler code here
+	this->m_iTypeFlag = 2;
 	this->m_iGetTwoPoint = 1;
 	Invalidate(TRUE);
 }

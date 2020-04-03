@@ -15,9 +15,9 @@ Class3=CCDTest002View
 Class4=CMainFrame
 
 ResourceCount=3
-Resource1=IDR_MAINFRAME
+Resource1=IDD_ABOUTBOX
 Class5=CAboutDlg
-Resource2=IDD_ABOUTBOX
+Resource2=IDR_MAINFRAME
 Class6=CCMDlg
 Resource3=IDD_DIALOG1
 
@@ -48,7 +48,7 @@ Type=0
 HeaderFile=MainFrm.h
 ImplementationFile=MainFrm.cpp
 Filter=T
-LastObject=ID_ONMOVE
+LastObject=ID_MIRROR
 BaseClass=CFrameWnd
 VirtualFilter=fWC
 
@@ -129,7 +129,8 @@ Command13=ID_MUTIPLYLINE
 Command14=ID_CLIPPOLYLINE
 Command15=ID_ONMOVE
 Command16=ID_BIN
-CommandCount=16
+Command17=ID_MIRROR
+CommandCount=17
 
 [DLG:IDD_DIALOG1]
 Type=1

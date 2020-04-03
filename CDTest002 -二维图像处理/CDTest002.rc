@@ -103,6 +103,7 @@ BEGIN
     BUTTON      ID_CLIPPOLYLINE
     BUTTON      ID_ONMOVE
     BUTTON      ID_BIN
+    BUTTON      ID_MIRROR
 END
 
 
@@ -406,6 +407,7 @@ BEGIN
     ID_BIN                  "删除所有东西"
     ID_CLIPPOLYLINE         "use the rect area to clip the polyline"
     ID_ONMOVE               "平移"
+    ID_MIRROR               "镜像"
 END
 
 #endif    // Chinese (中国) resources

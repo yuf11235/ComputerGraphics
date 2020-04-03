@@ -50,9 +50,9 @@ public:
 	int m_iClipFlag;//0-not clip; 1-pick up TopLeft; 2-pick up BottomRight; 3-start to clip the polyline; 4-show the result
 	void CutPolyLine();
 
-	int m_iMoveFlag;
+	int m_iTypeFlag;//m_iTypeFlag 1-移动， 2-旋转， 3-x轴镜像， 4-y轴镜像， 5-x轴错移， 6-y轴错移， 7-比例放缩
 	double m_Matrix[][3];//齐次矩阵
-	// iFlag: 0-移动， 1-旋转， 2-x轴镜像， 3-y轴镜像， 4-x轴错移， 5-y轴错移， 6-比例放缩
+	// iFlag/: 0-移动， 1-旋转， 2-x轴镜像， 3-y轴镜像， 4-x轴错移， 5-y轴错移， 6-比例放缩
 	void GetMatrix(double matrix[][3], int iFlag, double rotateAngle, double x_dis, double y_dis, double dbl_zoom);
 	void GetNewPoint();
 	void MatrixMatrix(double matrix0[][3], double matrix1[][3]);
@@ -97,6 +97,7 @@ protected:
 	afx_msg void OnBin();
 	afx_msg void OnClippolyline();
 	afx_msg void OnOnMove();
+	afx_msg void OnMirror();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };
