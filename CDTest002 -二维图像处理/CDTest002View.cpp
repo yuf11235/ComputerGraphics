@@ -52,6 +52,7 @@ CCDTest002View::CCDTest002View()
 	this->m_MDlg->m_pView=this;
 	this->m_iClipFlag = 0;
 	this->m_iDeleteFlag = 0;
+	this->m_iGetTwoPoint = 0;
 }
 
 CCDTest002View::~CCDTest002View()
@@ -225,7 +226,7 @@ void CCDTest002View::OnDraw(CDC* pDC)
 		}
 	}
 
-	if(this->m_iClipFlag == 3)
+	if(this->m_iClipFlag == 2)
 	{
 		pt_4clip1.x = this->m_TopLeftPoint.x;
 		pt_4clip1.y = this->m_BottomRightPoint.y;
@@ -265,6 +266,7 @@ void CCDTest002View::OnDraw(CDC* pDC)
 		}
 		this->DDA_Line(pDC, pt_2, this->m_point_Array.GetAt(0));
 		this->m_iClipFlag = 0;
+		// this->m_iGetTwoPoint = 0;
 	}
 }
 
@@ -431,7 +433,7 @@ void CCDTest002View::OnLButtonUp(UINT nFlags, CPoint point)
 	// TODO: Add your message handler code here and/or call default
 	CString str;
 	str.Format("(%d, %d)", point.x, point.y);
-	if (this->m_iClipFlag == 0 || this->m_iMoveFlag == 0)
+	if (this->m_iGetTwoPoint == 0)
 	{
 		// 正常取点、画线和多边形
 		if(finished==0)
@@ -439,15 +441,16 @@ void CCDTest002View::OnLButtonUp(UINT nFlags, CPoint point)
 		else if(finished==1)
 			return;
 	}
-	else if(this->m_iClipFlag == 1 || this->m_iMoveFLag == 1)
+	else if(this->m_iGetTwoPoint == 1)
 	{
 		this->m_TopLeftPoint = point;
-		this->m_iClipFlag = 2;
+		this->m_iGetTwoPoint = 2;
 	}
-	else if(this->m_iClipFlag == 2)
+	else if(this->m_iGetTwoPoint == 2 )
 	{
 		this->m_BottomRightPoint = point;
-		this->m_iClipFlag = 3;
+		if(this->m_iClipFlag == 1)
+			this->m_iClipFlag = 2;
 	}
 	// else if(this->m_iClipFlag == 4)
 	// {
@@ -467,18 +470,7 @@ void CCDTest002View::OnLButtonUp(UINT nFlags, CPoint point)
 void CCDTest002View::OnLButtonDown(UINT nFlags, CPoint point) 
 {
 	// TODO: Add your message handler code here and/or call default
-	// if(this->m_iClipFlag == 1)
-	// {
-	// 	// pickup the TopLeft point
-	// 	this->pt_4clip = point;
-	// 	this->m_iClipFlag = 2;
-	// }
-	// else if(m_iClipFlag == 2)
-	// {
-	// 	// pickup the TopLeft point
-	// 	this->pt_4clip = point;
-	// 	this->m_iClipFlag = 0;
-	// }
+
 	CView::OnLButtonDown(nFlags, point);
 }
 
@@ -930,6 +922,7 @@ void CCDTest002View::OnBin()
 	this->finished = 0;
 	this->m_iFillFLag = 0;
 	this->m_iClipFlag = 0;
+	this->m_iGetTwoPoint = 0;
 	Invalidate();
 }
 
@@ -938,10 +931,8 @@ void CCDTest002View::OnClippolyline()
 	// TODO: Add your command handler code here
 	if(this->finished == 1)
 	{
-		// CutPolyLine();
-		// this->m_BottomRightPoint = this->m_TopLeftPoint = point;
-		// this->flag = 0;
 		this->m_iClipFlag = 1;
+		this->m_iGetTwoPoint = 1;
 	}
 	else
 		MessageBox("not closed!");
@@ -951,7 +942,7 @@ void CCDTest002View::OnClippolyline()
 void CCDTest002View::OnOnMove() 
 {
 	// TODO: Add your command handler code here
-	m_iFlag = 3;// 平移标识符
+	// m_iFlag = 3;// 平移标识符
 	this->m_BottomRightPoint = this->m_TopLeftPoint;
 	m_iMoveFlag = 0;
 	Invalidate(TRUE);

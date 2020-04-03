@@ -439,7 +439,7 @@ void CCDTest002View::OnLButtonUp(UINT nFlags, CPoint point)
 		else if(finished==1)
 			return;
 	}
-	else if(this->m_iClipFlag == 1 || this->m_iMoveFLag == 1)
+	else if(this->m_iClipFlag == 1 || this->m_iMoveFlag == 1)
 	{
 		this->m_TopLeftPoint = point;
 		this->m_iClipFlag = 2;

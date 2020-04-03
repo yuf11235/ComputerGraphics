@@ -41,6 +41,7 @@ public:
 // Operations
 public:
 	int m_iFillFLag;//0-not fill; 1-fill
+	int m_iGetTwoPoint;
 	void scanTransfer(CDC * pDC);
 
 	int m_iDeleteFlag;//0-not delete; 1-delete
@@ -55,6 +56,7 @@ public:
 	void GetMatrix(double matrix[][3], int iFlag, double rotateAngle, double x_dis, double y_dis, double dbl_zoom);
 	void GetNewPoint();
 	void MatrixMatrix(double matrix0[][3], double matrix1[][3]);
+
 
 
 
