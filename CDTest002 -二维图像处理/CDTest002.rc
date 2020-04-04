@@ -104,6 +104,7 @@ BEGIN
     BUTTON      ID_ONMOVE
     BUTTON      ID_MIRROR
     BUTTON      ID_MG2
+    BUTTON      ID_ZOOM
     BUTTON      ID_BIN
 END
 
@@ -222,6 +223,22 @@ BEGIN
     PUSHBUTTON      "Button1",IDC_BUTTON1,91,50,50,14
 END
 
+IDD_DIALOG3 DIALOG DISCARDABLE  0, 0, 187, 96
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "对话"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,130,7,50,14
+    PUSHBUTTON      "取消",IDCANCEL,130,24,50,14
+    LTEXT           "ratio",IDC_STATIC,13,19,16,8
+    LTEXT           "x",IDC_STATIC,13,54,8,8
+    LTEXT           "y",IDC_STATIC,13,71,8,8
+    EDITTEXT        IDC_EDIT1,35,16,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,35,52,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,35,69,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Go",IDC_BUTTON2,96,47,50,14
+END
+
 
 #ifndef _MAC
 /////////////////////////////////////////////////////////////////////////////
@@ -296,6 +313,14 @@ BEGIN
         RIGHTMARGIN, 180
         TOPMARGIN, 7
         BOTTOMMARGIN, 90
+    END
+
+    IDD_DIALOG3, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 89
     END
 END
 #endif    // APSTUDIO_INVOKED
@@ -436,6 +461,7 @@ BEGIN
     ID_ONMOVE               "平移"
     ID_MIRROR               "镜像"
     ID_MG2                  "rotate"
+    ID_ZOOM                 "缩放"
 END
 
 #endif    // Chinese (中国) resources

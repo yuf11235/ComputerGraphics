@@ -12,6 +12,7 @@
 #include <afxtempl.h>
 #include "CMDlg.h"
 #include "CMDlg2.h"
+#include "CMDlg3.h"
 #define PI 3.1415926
 #include <cmath>
 class CCDTest002Doc;
@@ -31,6 +32,7 @@ public:
 
 	CCMDlg *m_MDlg;
 	CCMDlg2 *m_MDlg2;
+	CCMDlg3 *m_MDlg3;
 
 	CArray<CPoint, CPoint> m_point_Array;// to store point which pickuped by the left mouse botton
 
@@ -101,6 +103,7 @@ protected:
 	afx_msg void OnOnMove();
 	afx_msg void OnMirror();
 	afx_msg void OnMg2();
+	afx_msg void OnZoom();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

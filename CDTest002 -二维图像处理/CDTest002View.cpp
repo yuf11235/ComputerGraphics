@@ -34,6 +34,7 @@ BEGIN_MESSAGE_MAP(CCDTest002View, CView)
 	ON_COMMAND(ID_ONMOVE, OnOnMove)
 	ON_COMMAND(ID_MIRROR, OnMirror)
 	ON_COMMAND(ID_MG2, OnMg2)
+	ON_COMMAND(ID_ZOOM, OnZoom)
 	//}}AFX_MSG_MAP
 	// Standard printing commands
 	ON_COMMAND(ID_FILE_PRINT, CView::OnFilePrint)
@@ -51,9 +52,11 @@ CCDTest002View::CCDTest002View()
 	this->finished=0;
 	this->m_MDlg=new CCMDlg();
 	this->m_MDlg2=new CCMDlg2();
+	this->m_MDlg3=new CCMDlg3();
 	this->m_iFillFLag=0;
 	this->m_MDlg->m_pView=this;
 	this->m_MDlg2->m_pView2=this;
+	this->m_MDlg3->m_pView3=this;
 	this->m_iClipFlag = 0;
 	this->m_iDeleteFlag = 0;
 	this->m_iGetTwoPoint = 0;
@@ -66,6 +69,8 @@ CCDTest002View::~CCDTest002View()
 		delete this->m_MDlg;
 	if(this->m_MDlg2!=NULL)
 		delete this->m_MDlg2;
+	if(this->m_MDlg3!=NULL)
+		delete this->m_MDlg3;
 }
 
 BOOL CCDTest002View::PreCreateWindow(CREATESTRUCT& cs)
@@ -1089,5 +1094,23 @@ void CCDTest002View::OnMg2()
 		this->m_MDlg2->ShowWindow(TRUE);
 		this->m_MDlg2->m_angle = 0;
 		this->m_MDlg2->UpdateData(FALSE);
+	}
+}
+
+void CCDTest002View::OnZoom() 
+{
+	// TODO: Add your command handler code here
+	this->m_iTypeFlag = 4;
+	if(this->m_MDlg3->GetSafeHwnd()==NULL)
+	{
+		this->m_MDlg3->Create();
+		this->m_MDlg3->m_zoomRatio = 0;
+		this->m_MDlg3->UpdateData(FALSE);
+	}
+	else
+	{
+		this->m_MDlg3->ShowWindow(TRUE);
+		this->m_MDlg3->m_zoomRatio = 0;
+		this->m_MDlg3->UpdateData(FALSE);
 	}
 }

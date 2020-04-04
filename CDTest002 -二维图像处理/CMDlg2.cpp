@@ -57,10 +57,12 @@ void CCMDlg2::OnButton1()
 {
 	// TODO: Add your control notification handler code here
 	UpdateData(TRUE);
-	CPoint pt;
-	pt.x = this->m_pointx;
-	pt.y = this->m_pointy;
-	this->m_pView2->m_point_Array.Add(pt);
+	// CPoint pt;
+	// pt.x = this->m_pointx;
+	// pt.y = this->m_pointy;
+	// this->m_pView2->m_point_Array.Add(pt);
+	this->m_pView2->m_TopLeftPoint.x = this->m_pointx;
+	this->m_pView2->m_TopLeftPoint.y = this->m_pointy;
 	this->m_pView2->Invalidate();
 }
 
