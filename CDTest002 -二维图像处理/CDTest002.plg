@@ -6,34 +6,31 @@
 --------------------Configuration: CDTest002 - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\Users\yuf\AppData\Local\Temp\RSPA8C0.tmp" with contents
+Creating temporary file "C:\Users\yuf\AppData\Local\Temp\RSP4EE6.tmp" with contents
 [
 /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/CDTest002.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
-"D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -二维图像处理\CDTest002View.cpp"
+"D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -二维图像处理\CMDlg2.cpp"
 ]
-Creating command line "cl.exe @C:\Users\yuf\AppData\Local\Temp\RSPA8C0.tmp" 
-Creating temporary file "C:\Users\yuf\AppData\Local\Temp\RSPA8D1.tmp" with contents
+Creating command line "cl.exe @C:\Users\yuf\AppData\Local\Temp\RSP4EE6.tmp" 
+Creating temporary file "C:\Users\yuf\AppData\Local\Temp\RSP4EF6.tmp" with contents
 [
 /nologo /subsystem:windows /incremental:yes /pdb:"Debug/CDTest002.pdb" /debug /machine:I386 /out:"Debug/CDTest002.exe" /pdbtype:sept 
 ".\Debug\CDTest002.obj"
 ".\Debug\CDTest002Doc.obj"
 ".\Debug\CDTest002View.obj"
 ".\Debug\CMDlg.obj"
+".\Debug\CMDlg2.obj"
 ".\Debug\MainFrm.obj"
 ".\Debug\StdAfx.obj"
 ".\Debug\CDTest002.res"
 ]
-Creating command line "link.exe @C:\Users\yuf\AppData\Local\Temp\RSPA8D1.tmp"
+Creating command line "link.exe @C:\Users\yuf\AppData\Local\Temp\RSP4EF6.tmp"
 <h3>Output Window</h3>
 Compiling...
-CDTest002View.cpp
-d:\microsoft visual studio\myprojects\computergraphics\cdtest002 -二维图像处理\cdtest002view.h(54) : warning C4200: nonstandard extension used : zero-sized array in struct/union
-D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -二维图像处理\CDTest002View.cpp(947) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
-D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -二维图像处理\CDTest002View.cpp(948) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
-D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -二维图像处理\CDTest002View.cpp(950) : warning C4244: '/=' : conversion from 'double' to 'long', possible loss of data
-D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -二维图像处理\CDTest002View.cpp(951) : warning C4244: '/=' : conversion from 'double' to 'long', possible loss of data
+CMDlg2.cpp
+d:\microsoft visual studio\myprojects\computergraphics\cdtest002 -二维图像处理\cdtest002view.h(56) : warning C4200: nonstandard extension used : zero-sized array in struct/union
 Linking...
-Creating command line "bscmake.exe /nologo /o"Debug/CDTest002.bsc"  ".\Debug\StdAfx.sbr" ".\Debug\CDTest002.sbr" ".\Debug\CDTest002Doc.sbr" ".\Debug\CDTest002View.sbr" ".\Debug\CMDlg.sbr" ".\Debug\MainFrm.sbr""
+Creating command line "bscmake.exe /nologo /o"Debug/CDTest002.bsc"  ".\Debug\StdAfx.sbr" ".\Debug\CDTest002.sbr" ".\Debug\CDTest002Doc.sbr" ".\Debug\CDTest002View.sbr" ".\Debug\CMDlg.sbr" ".\Debug\CMDlg2.sbr" ".\Debug\MainFrm.sbr""
 Creating browse info file...
 <h3>Output Window</h3>
 

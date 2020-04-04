@@ -33,6 +33,7 @@ BEGIN_MESSAGE_MAP(CCDTest002View, CView)
 	ON_COMMAND(ID_CLIPPOLYLINE, OnClippolyline)
 	ON_COMMAND(ID_ONMOVE, OnOnMove)
 	ON_COMMAND(ID_MIRROR, OnMirror)
+	ON_COMMAND(ID_MG2, OnMg2)
 	//}}AFX_MSG_MAP
 	// Standard printing commands
 	ON_COMMAND(ID_FILE_PRINT, CView::OnFilePrint)
@@ -49,8 +50,10 @@ CCDTest002View::CCDTest002View()
 	this->flag=0;
 	this->finished=0;
 	this->m_MDlg=new CCMDlg();
+	this->m_MDlg2=new CCMDlg2();
 	this->m_iFillFLag=0;
 	this->m_MDlg->m_pView=this;
+	this->m_MDlg2->m_pView2=this;
 	this->m_iClipFlag = 0;
 	this->m_iDeleteFlag = 0;
 	this->m_iGetTwoPoint = 0;
@@ -61,6 +64,8 @@ CCDTest002View::~CCDTest002View()
 {
 	if(this->m_MDlg!=NULL)
 		delete this->m_MDlg;
+	if(this->m_MDlg2!=NULL)
+		delete this->m_MDlg2;
 }
 
 BOOL CCDTest002View::PreCreateWindow(CREATESTRUCT& cs)
@@ -446,7 +451,15 @@ void CCDTest002View::OnLButtonUp(UINT nFlags, CPoint point)
 	else if(this->m_iGetTwoPoint == 1)
 	{
 		this->m_TopLeftPoint = point;
-		this->m_iGetTwoPoint = 2;
+		if(this->m_iClipFlag == 1 || this->m_iTypeFlag == 1 || this->m_iTypeFlag == 2)
+		{
+			this->m_iGetTwoPoint = 2;
+		}
+		else if(this->m_iTypeFlag == 3 || this->m_iTypeFlag == 4)
+		{
+
+			this->m_iGetTwoPoint = 0;
+		}
 	}
 	else if(this->m_iGetTwoPoint == 2 )
 	{
@@ -461,7 +474,6 @@ void CCDTest002View::OnLButtonUp(UINT nFlags, CPoint point)
 			GetMatrix(m_Matrix, 0, 0, this->m_BottomRightPoint.x - this->m_TopLeftPoint.x, this->m_BottomRightPoint.y - this->m_TopLeftPoint.y, 0);
 			GetNewPoint();
 			this->m_iTypeFlag = 0;
-			this->m_iGetTwoPoint = 0;
 		}
 		else if(this->m_iTypeFlag == 2)
 		{
@@ -503,8 +515,8 @@ void CCDTest002View::OnLButtonUp(UINT nFlags, CPoint point)
 
 			GetNewPoint();
 			this->m_iTypeFlag = 0;
-			this->m_iGetTwoPoint = 0;
 		}
+		this->m_iGetTwoPoint = 0;
 	}
 	// else if(this->m_iClipFlag == 4)
 	// {
@@ -516,6 +528,12 @@ void CCDTest002View::OnLButtonUp(UINT nFlags, CPoint point)
 		this->m_MDlg->m_x=point.x;
 		this->m_MDlg->m_y=point.y;
 		this->m_MDlg->UpdateData(FALSE);
+	}
+	if(this->m_MDlg2->GetSafeHwnd()!=NULL)
+	{
+		this->m_MDlg2->m_pointx=point.x;
+		this->m_MDlg2->m_pointy=point.y;
+		this->m_MDlg2->UpdateData(FALSE);
 	}
 	Invalidate();
 	CView::OnLButtonUp(nFlags, point);
@@ -1053,4 +1071,17 @@ void CCDTest002View::OnMirror()
 	this->m_iGetTwoPoint = 1;
 	this->m_BottomRightPoint = this->m_TopLeftPoint;
 	Invalidate(TRUE);
+}
+
+void CCDTest002View::OnMg2() 
+{
+	// TODO: Add your command handler code here
+	if(this->m_MDlg2->GetSafeHwnd()==NULL)
+	{
+		this->m_MDlg2->Create();
+	}
+	else
+	{
+		this->m_MDlg2->ShowWindow(TRUE);
+	}
 }

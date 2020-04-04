@@ -102,8 +102,9 @@ BEGIN
     BUTTON      ID_MUTIPLYLINE
     BUTTON      ID_CLIPPOLYLINE
     BUTTON      ID_ONMOVE
-    BUTTON      ID_BIN
     BUTTON      ID_MIRROR
+    BUTTON      ID_MG2
+    BUTTON      ID_BIN
 END
 
 
@@ -203,6 +204,24 @@ BEGIN
     PUSHBUTTON      "Button1",IDC_BUTTON1,74,36,50,14
 END
 
+IDD_DIALOG2 DIALOG DISCARDABLE  0, 0, 187, 97
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "对话"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,130,7,50,14
+    PUSHBUTTON      "取消",IDCANCEL,130,24,50,14
+    LTEXT           "angle",IDC_STATIC,15,15,19,8
+    LTEXT           "x",IDC_STATIC,14,42,8,8
+    LTEXT           "y",IDC_STATIC,14,63,8,8
+    EDITTEXT        IDC_EDIT1,39,14,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,39,40,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,39,61,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_ARROWKEYS,80,14,
+                    10,14
+    PUSHBUTTON      "Button1",IDC_BUTTON1,91,50,50,14
+END
+
 
 #ifndef _MAC
 /////////////////////////////////////////////////////////////////////////////
@@ -264,6 +283,14 @@ BEGIN
     END
 
     IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 90
+    END
+
+    IDD_DIALOG2, DIALOG
     BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 180
@@ -408,6 +435,7 @@ BEGIN
     ID_CLIPPOLYLINE         "use the rect area to clip the polyline"
     ID_ONMOVE               "平移"
     ID_MIRROR               "镜像"
+    ID_MG2                  "rotate"
 END
 
 #endif    // Chinese (中国) resources

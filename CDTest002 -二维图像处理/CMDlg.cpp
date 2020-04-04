@@ -71,6 +71,6 @@ void CCMDlg::OnButton1()
 	CPoint pt;
 	pt.x = this->m_x;
 	pt.y = this->m_y;
-	this->m_pView->m_pt_array.Add(pt);
+	this->m_pView->m_point_Array.Add(pt);
 	this->m_pView->Invalidate();
 }

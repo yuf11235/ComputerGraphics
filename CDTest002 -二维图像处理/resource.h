@@ -6,10 +6,13 @@
 #define IDR_MAINFRAME                   128
 #define IDR_CDTESTTYPE                  129
 #define IDD_DIALOG1                     130
+#define IDD_DIALOG2                     131
 #define IDC_EDIT1                       1002
 #define IDC_EDIT2                       1003
 #define IDC_EDIT3                       1004
 #define IDC_BUTTON1                     1005
+#define IDC_SPIN1                       1006
+#define IDC_BUTTON2                     1007
 #define ID_MG                           32772
 #define ID_FILLCOLOR                    32784
 #define ID_DRAWPOLYLINE                 32785
@@ -19,15 +22,16 @@
 #define ID_CLIPPOLYLINE                 32791
 #define ID_ONMOVE                       32793
 #define ID_MIRROR                       32794
+#define ID_MG2                          32795
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        131
-#define _APS_NEXT_COMMAND_VALUE         32795
-#define _APS_NEXT_CONTROL_VALUE         1006
+#define _APS_NEXT_RESOURCE_VALUE        132
+#define _APS_NEXT_COMMAND_VALUE         32796
+#define _APS_NEXT_CONTROL_VALUE         1008
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

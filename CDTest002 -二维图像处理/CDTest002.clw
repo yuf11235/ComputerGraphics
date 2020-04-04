@@ -2,24 +2,26 @@
 
 [General Info]
 Version=1
-LastClass=CCDTest002View
+LastClass=CCMDlg
 LastTemplate=CDialog
 NewFileInclude1=#include "stdafx.h"
 NewFileInclude2=#include "CDTest002.h"
 LastPage=0
 
-ClassCount=6
+ClassCount=7
 Class1=CCDTest002App
 Class2=CCDTest002Doc
 Class3=CCDTest002View
 Class4=CMainFrame
 
-ResourceCount=3
+ResourceCount=4
 Resource1=IDR_MAINFRAME
 Class5=CAboutDlg
 Resource2=IDD_ABOUTBOX
 Class6=CCMDlg
 Resource3=IDD_DIALOG1
+Class7=CCMDlg2
+Resource4=IDD_DIALOG2
 
 [CLS:CCDTest002App]
 Type=0
@@ -38,7 +40,7 @@ Type=0
 HeaderFile=CDTest002View.h
 ImplementationFile=CDTest002View.cpp
 Filter=C
-LastObject=CCDTest002View
+LastObject=ID_MG2
 BaseClass=CView
 VirtualFilter=VWC
 
@@ -48,7 +50,7 @@ Type=0
 HeaderFile=MainFrm.h
 ImplementationFile=MainFrm.cpp
 Filter=T
-LastObject=ID_MIRROR
+LastObject=CMainFrame
 BaseClass=CFrameWnd
 VirtualFilter=fWC
 
@@ -128,9 +130,10 @@ Command12=ID_POLYGON
 Command13=ID_MUTIPLYLINE
 Command14=ID_CLIPPOLYLINE
 Command15=ID_ONMOVE
-Command16=ID_BIN
-Command17=ID_MIRROR
-CommandCount=17
+Command16=ID_MIRROR
+Command17=ID_MG2
+Command18=ID_BIN
+CommandCount=18
 
 [DLG:IDD_DIALOG1]
 Type=1
@@ -151,5 +154,29 @@ ImplementationFile=CMDlg.cpp
 BaseClass=CDialog
 Filter=D
 LastObject=IDC_BUTTON1
+VirtualFilter=dWC
+
+[DLG:IDD_DIALOG2]
+Type=1
+Class=CCMDlg2
+ControlCount=10
+Control1=IDOK,button,1342242817
+Control2=IDCANCEL,button,1342242816
+Control3=IDC_STATIC,static,1342308352
+Control4=IDC_STATIC,static,1342308352
+Control5=IDC_STATIC,static,1342308352
+Control6=IDC_EDIT1,edit,1350631552
+Control7=IDC_EDIT2,edit,1350631552
+Control8=IDC_EDIT3,edit,1350631552
+Control9=IDC_SPIN1,msctls_updown32,1342177312
+Control10=IDC_BUTTON1,button,1342242816
+
+[CLS:CCMDlg2]
+Type=0
+HeaderFile=CMDlg2.h
+ImplementationFile=CMDlg2.cpp
+BaseClass=CDialog
+Filter=D
+LastObject=CCMDlg2
 VirtualFilter=dWC
 

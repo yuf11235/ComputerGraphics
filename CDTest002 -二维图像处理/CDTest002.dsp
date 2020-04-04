@@ -110,6 +110,10 @@ SOURCE=.\CMDlg.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\CMDlg2.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\MainFrm.cpp
 # End Source File
 # Begin Source File
@@ -136,6 +140,10 @@ SOURCE=.\CDTest002View.h
 # Begin Source File
 
 SOURCE=.\CMDlg.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\CMDlg2.h
 # End Source File
 # Begin Source File
 
