@@ -1076,12 +1076,18 @@ void CCDTest002View::OnMirror()
 void CCDTest002View::OnMg2() 
 {
 	// TODO: Add your command handler code here
+	this->m_iTypeFlag = 3;
 	if(this->m_MDlg2->GetSafeHwnd()==NULL)
 	{
+
 		this->m_MDlg2->Create();
+		this->m_MDlg2->m_angle = 0;
+		this->m_MDlg2->UpdateData(FALSE);
 	}
 	else
 	{
 		this->m_MDlg2->ShowWindow(TRUE);
+		this->m_MDlg2->m_angle = 0;
+		this->m_MDlg2->UpdateData(FALSE);
 	}
 }

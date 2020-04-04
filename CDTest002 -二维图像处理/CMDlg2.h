@@ -44,6 +44,7 @@ protected:
 	// Generated message map functions
 	//{{AFX_MSG(CCMDlg2)
 	afx_msg void OnButton1();
+	afx_msg void OnDeltaposSpin1(NMHDR* pNMHDR, LRESULT* pResult);
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

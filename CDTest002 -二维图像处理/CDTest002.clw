@@ -2,7 +2,7 @@
 
 [General Info]
 Version=1
-LastClass=CCMDlg
+LastClass=CCMDlg2
 LastTemplate=CDialog
 NewFileInclude1=#include "stdafx.h"
 NewFileInclude2=#include "CDTest002.h"
@@ -177,6 +177,6 @@ HeaderFile=CMDlg2.h
 ImplementationFile=CMDlg2.cpp
 BaseClass=CDialog
 Filter=D
-LastObject=CCMDlg2
+LastObject=IDC_SPIN1
 VirtualFilter=dWC
 
