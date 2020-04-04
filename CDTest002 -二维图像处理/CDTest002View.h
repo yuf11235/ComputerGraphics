@@ -12,7 +12,7 @@
 #include <afxtempl.h>
 #include "CMDlg.h"
 #define PI 3.1415926
-#include <math.h>
+#include <cmath>
 class CCDTest002Doc;
 
 

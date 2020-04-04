@@ -461,6 +461,7 @@ void CCDTest002View::OnLButtonUp(UINT nFlags, CPoint point)
 			GetMatrix(m_Matrix, 0, 0, this->m_BottomRightPoint.x - this->m_TopLeftPoint.x, this->m_BottomRightPoint.y - this->m_TopLeftPoint.y, 0);
 			GetNewPoint();
 			this->m_iTypeFlag = 0;
+			this->m_iGetTwoPoint = 0;
 		}
 		else if(this->m_iTypeFlag == 2)
 		{
@@ -488,20 +489,21 @@ void CCDTest002View::OnLButtonUp(UINT nFlags, CPoint point)
 			// void GetMatrix(double matrix[][3], int iFlag, double rotateAngle, double x_dis, double y_dis, double dbl_zoom);
 			GetMatrix(this->m_Matrix, 0, 0, 0, (-1)*y_ledge, 0);
 
-			// GetMatrix(m_Matrix0, 1, (-1)*angle, 0, 0, 0);
-			// MatrixXMatrix(this->m_Matrix, m_Matrix0);
+			GetMatrix(m_Matrix0, 1, (-1)*angle, 0, 0, 0);
+			MatrixXMatrix(this->m_Matrix, m_Matrix0);
 
 			GetMatrix(m_Matrix0, 2, 0, 0, 0, 0);
 			MatrixXMatrix(this->m_Matrix, m_Matrix0);
 
-			// GetMatrix(m_Matrix0, 1, angle, 0, 0, 0);
-			// MatrixXMatrix(this->m_Matrix, m_Matrix0);
+			GetMatrix(m_Matrix0, 1, angle, 0, 0, 0);
+			MatrixXMatrix(this->m_Matrix, m_Matrix0);
 
-			GetMatrix(this->m_Matrix, 0, 0, 0, y_ledge, 0);
+			GetMatrix(m_Matrix0, 0, 0, 0, y_ledge, 0);
 			MatrixXMatrix(this->m_Matrix, m_Matrix0);
 
 			GetNewPoint();
 			this->m_iTypeFlag = 0;
+			this->m_iGetTwoPoint = 0;
 		}
 	}
 	// else if(this->m_iClipFlag == 4)
@@ -1040,6 +1042,7 @@ void CCDTest002View::OnOnMove()
 	// 平移
 	this->m_iTypeFlag = 1;
 	this->m_iGetTwoPoint = 1;
+	this->m_BottomRightPoint = this->m_TopLeftPoint;
 	Invalidate(TRUE);
 }
 
@@ -1048,5 +1051,6 @@ void CCDTest002View::OnMirror()
 	// TODO: Add your command handler code here
 	this->m_iTypeFlag = 2;
 	this->m_iGetTwoPoint = 1;
+	this->m_BottomRightPoint = this->m_TopLeftPoint;
 	Invalidate(TRUE);
 }
