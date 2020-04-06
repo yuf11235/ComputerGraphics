@@ -540,6 +540,12 @@ void CCDTest002View::OnLButtonUp(UINT nFlags, CPoint point)
 		this->m_MDlg2->m_pointy=point.y;
 		this->m_MDlg2->UpdateData(FALSE);
 	}
+	if(this->m_MDlg3->GetSafeHwnd()!=NULL)
+	{
+		this->m_MDlg3->m_zoomX=point.x;
+		this->m_MDlg3->m_zoomY=point.y;
+		this->m_MDlg3->UpdateData(FALSE);
+	}
 	Invalidate();
 	CView::OnLButtonUp(nFlags, point);
 }
@@ -1082,6 +1088,7 @@ void CCDTest002View::OnMg2()
 {
 	// TODO: Add your command handler code here
 	this->m_iTypeFlag = 3;
+	this->m_iGetTwoPoint = 1;
 	if(this->m_MDlg2->GetSafeHwnd()==NULL)
 	{
 
@@ -1101,6 +1108,7 @@ void CCDTest002View::OnZoom()
 {
 	// TODO: Add your command handler code here
 	this->m_iTypeFlag = 4;
+	this->m_iGetTwoPoint = 1;
 	if(this->m_MDlg3->GetSafeHwnd()==NULL)
 	{
 		this->m_MDlg3->Create();
