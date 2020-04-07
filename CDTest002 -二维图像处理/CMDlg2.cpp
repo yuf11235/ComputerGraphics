@@ -63,7 +63,29 @@ void CCMDlg2::OnButton1()
 	// this->m_pView2->m_point_Array.Add(pt);
 	this->m_pView2->m_TopLeftPoint.x = this->m_pointx;
 	this->m_pView2->m_TopLeftPoint.y = this->m_pointy;
-	this->m_pView2->Invalidate();
+	//this->m_pView2->Invalidate();
+	{
+		double angle;
+		int x0, x1, y0, y1;
+		double x_ledge, y_ledge;
+		double m_Matrix0[3][3];
+
+		x_ledge = this->m_pointx;
+		y_ledge = this->m_pointy;
+
+		angle = this->m_angle;
+		m_pView2->GetMatrix(m_pView2->m_Matrix, 0, 0, (-1)*x_ledge, (-1)*y_ledge, 0);
+
+		m_pView2->GetMatrix(m_Matrix0, 1, (-1)*angle, 0, 0, 0);
+		m_pView2->MatrixXMatrix(m_pView2->m_Matrix, m_Matrix0);
+
+		m_pView2->GetMatrix(m_Matrix0, 0, 0, x_ledge, y_ledge, 0);
+		m_pView2->MatrixXMatrix(m_pView2->m_Matrix, m_Matrix0);
+
+		m_pView2->GetNewPoint();
+		m_pView2->Invalidate(TRUE);
+	}
+	UpdateData(FALSE);
 }
 
 void CCMDlg2::OnDeltaposSpin1(NMHDR* pNMHDR, LRESULT* pResult) 
