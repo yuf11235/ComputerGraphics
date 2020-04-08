@@ -15,11 +15,11 @@ Class3=CCDTest002View
 Class4=CMainFrame
 
 ResourceCount=5
-Resource1=IDD_DIALOG2
+Resource1=IDR_MAINFRAME
 Class5=CAboutDlg
-Resource2=IDR_MAINFRAME
+Resource2=IDD_DIALOG1
 Class6=CCMDlg
-Resource3=IDD_DIALOG1
+Resource3=IDD_DIALOG2
 Class7=CCMDlg2
 Resource4=IDD_ABOUTBOX
 Class8=CCMDlg3
