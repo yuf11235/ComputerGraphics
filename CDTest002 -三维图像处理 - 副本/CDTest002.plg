@@ -6,15 +6,7 @@
 --------------------Configuration: CDTest002 - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\Users\yuf\AppData\Local\Temp\RSP80CD.tmp" with contents
-[
-/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/CDTest002.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
-"D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理 - 副本\CDTest002View.cpp"
-"D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理 - 副本\CMDlg3.cpp"
-"D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理 - 副本\CMDlg4.cpp"
-]
-Creating command line "cl.exe @C:\Users\yuf\AppData\Local\Temp\RSP80CD.tmp" 
-Creating temporary file "C:\Users\yuf\AppData\Local\Temp\RSP80CE.tmp" with contents
+Creating temporary file "C:\Users\yuf\AppData\Local\Temp\RSPC7A1.tmp" with contents
 [
 /nologo /subsystem:windows /incremental:yes /pdb:"Debug/CDTest002.pdb" /debug /machine:I386 /out:"Debug/CDTest002.exe" /pdbtype:sept 
 ".\Debug\CDTest002.obj"
@@ -28,28 +20,9 @@ Creating temporary file "C:\Users\yuf\AppData\Local\Temp\RSP80CE.tmp" with conte
 ".\Debug\StdAfx.obj"
 ".\Debug\CDTest002.res"
 ]
-Creating command line "link.exe @C:\Users\yuf\AppData\Local\Temp\RSP80CE.tmp"
+Creating command line "link.exe @C:\Users\yuf\AppData\Local\Temp\RSPC7A1.tmp"
 <h3>Output Window</h3>
-Compiling...
-CDTest002View.cpp
-d:\microsoft visual studio\myprojects\computergraphics\cdtest002 -三维图像处理 - 副本\cdtest002view.h(73) : warning C4200: nonstandard extension used : zero-sized array in struct/union
-D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理 - 副本\CDTest002View.cpp(982) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
-D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理 - 副本\CDTest002View.cpp(983) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
-D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理 - 副本\CDTest002View.cpp(985) : warning C4244: '/=' : conversion from 'double' to 'long', possible loss of data
-D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理 - 副本\CDTest002View.cpp(986) : warning C4244: '/=' : conversion from 'double' to 'long', possible loss of data
-D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理 - 副本\CDTest002View.cpp(1042) : warning C4553: '==' : operator has no effect; did you intend '='?
-D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理 - 副本\CDTest002View.cpp(1179) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
-D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理 - 副本\CDTest002View.cpp(1180) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
-D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理 - 副本\CDTest002View.cpp(1184) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
-D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理 - 副本\CDTest002View.cpp(1185) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
-Generating Code...
-Skipping... (no relevant changes detected)
-CMDlg3.cpp
-CMDlg4.cpp
 Linking...
-Creating command line "bscmake.exe /nologo /o"Debug/CDTest002.bsc"  ".\Debug\StdAfx.sbr" ".\Debug\CDTest002.sbr" ".\Debug\CDTest002Doc.sbr" ".\Debug\CDTest002View.sbr" ".\Debug\CMDlg.sbr" ".\Debug\CMDlg2.sbr" ".\Debug\CMDlg3.sbr" ".\Debug\CMDlg4.sbr" ".\Debug\MainFrm.sbr""
-Creating browse info file...
-<h3>Output Window</h3>
 
 
 

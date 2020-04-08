@@ -258,9 +258,9 @@ BEGIN
     COMBOBOX        IDC_COMBO1,32,66,48,30,CBS_DROPDOWN | CBS_SORT | 
                     WS_VSCROLL | WS_TABSTOP
     EDITTEXT        IDC_EDIT4,109,63,40,14,ES_AUTOHSCROLL
-    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_ARROWKEYS,77,46,
-                    10,14
     CONTROL         "Spin2",IDC_SPIN2,"msctls_updown32",UDS_ARROWKEYS,151,62,
+                    10,14
+    CONTROL         "Spin3",IDC_SPIN3,"msctls_updown32",UDS_ARROWKEYS,81,46,
                     10,14
 END
 

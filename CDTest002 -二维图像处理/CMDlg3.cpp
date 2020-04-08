@@ -46,6 +46,7 @@ void CCMDlg3::DoDataExchange(CDataExchange* pDX)
 BEGIN_MESSAGE_MAP(CCMDlg3, CDialog)
 	//{{AFX_MSG_MAP(CCMDlg3)
 	ON_BN_CLICKED(IDC_BUTTON2, OnButton2)
+	ON_NOTIFY(NM_OUTOFMEMORY, IDC_SPIN1, OnOutofmemorySpin1)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -74,4 +75,11 @@ void CCMDlg3::OnButton2()
 
 	m_pView3->GetNewPoint();
 	this->m_pView3->Invalidate();
+}
+
+void CCMDlg3::OnOutofmemorySpin1(NMHDR* pNMHDR, LRESULT* pResult) 
+{
+	// TODO: Add your control notification handler code here
+	
+	*pResult = 0;
 }

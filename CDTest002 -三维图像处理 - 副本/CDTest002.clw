@@ -15,15 +15,15 @@ Class3=CCDTest002View
 Class4=CMainFrame
 
 ResourceCount=6
-Resource1=IDD_DIALOG3
+Resource1=IDR_MAINFRAME
 Class5=CAboutDlg
-Resource2=IDR_MAINFRAME
+Resource2=IDD_ABOUTBOX
 Class6=CCMDlg
-Resource3=IDD_DIALOG1
+Resource3=IDD_DIALOG2
 Class7=CCMDlg2
-Resource4=IDD_DIALOG2
+Resource4=IDD_DIALOG3
 Class8=CCMDlg3
-Resource5=IDD_ABOUTBOX
+Resource5=IDD_DIALOG1
 Class9=CCMDlg4
 Resource6=IDD_DIALOG4
 
@@ -225,8 +225,8 @@ Control9=IDC_EDIT2,edit,1350631552
 Control10=IDC_EDIT3,edit,1350631552
 Control11=IDC_COMBO1,combobox,1344340226
 Control12=IDC_EDIT4,edit,1350631552
-Control13=IDC_SPIN1,msctls_updown32,1342177312
-Control14=IDC_SPIN2,msctls_updown32,1342177312
+Control13=IDC_SPIN2,msctls_updown32,1342177312
+Control14=IDC_SPIN3,msctls_updown32,1342177312
 
 [CLS:CCMDlg4]
 Type=0
@@ -234,6 +234,6 @@ HeaderFile=CMDlg4.h
 ImplementationFile=CMDlg4.cpp
 BaseClass=CDialog
 Filter=D
-LastObject=IDC_SPIN1
+LastObject=IDC_SPIN2
 VirtualFilter=dWC
 

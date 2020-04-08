@@ -50,6 +50,7 @@ protected:
 	// Generated message map functions
 	//{{AFX_MSG(CCMDlg3)
 	afx_msg void OnButton2();
+	afx_msg void OnOutofmemorySpin1(NMHDR* pNMHDR, LRESULT* pResult);
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

@@ -49,7 +49,11 @@ protected:
 
 	// Generated message map functions
 	//{{AFX_MSG(CCMDlg4)
-		// NOTE: the ClassWizard will add member functions here
+	afx_msg void OnOutofmemorySpin1(NMHDR* pNMHDR, LRESULT* pResult);
+	virtual void OnOK();
+	afx_msg void OnOutofmemorySpin4(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnDeltaposSpin2(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnDeltaposSpin3(NMHDR* pNMHDR, LRESULT* pResult);
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };
