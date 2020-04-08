@@ -13,6 +13,7 @@
 #include "CMDlg.h"
 #include "CMDlg2.h"
 #include "CMDlg3.h"
+#include "CMDlgFor3D.h"
 #define PI 3.1415926
 #include <cmath>
 class CCDTest002Doc;
@@ -33,6 +34,7 @@ public:
 	CCMDlg *m_MDlg;
 	CCMDlg2 *m_MDlg2;
 	CCMDlg3 *m_MDlg3;
+	CCMDlgFor3D *m_MDlg3D;
 
 	CArray<CPoint, CPoint> m_point_Array;// to store point which pickuped by the left mouse botton
 
@@ -60,6 +62,10 @@ public:
 	void GetMatrix(double matrix[][3], int iFlag, double rotateAngle, double x_dis, double y_dis, double dbl_zoom);
 	void GetNewPoint();
 	void MatrixXMatrix(double matrix0[][3], double matrix1[][3]);
+
+
+	void Extern();//拉伸函数
+	void GetNewPoint(double m_Matrix[][4]);
 
 
 

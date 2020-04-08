@@ -118,6 +118,10 @@ SOURCE=.\CMDlg3.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\CMDlgFor3D.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\MainFrm.cpp
 # End Source File
 # Begin Source File
@@ -152,6 +156,10 @@ SOURCE=.\CMDlg2.h
 # Begin Source File
 
 SOURCE=.\CMDlg3.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\CMDlgFor3D.h
 # End Source File
 # Begin Source File
 

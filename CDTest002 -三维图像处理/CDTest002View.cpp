@@ -35,6 +35,7 @@ BEGIN_MESSAGE_MAP(CCDTest002View, CView)
 	ON_COMMAND(ID_MIRROR, OnMirror)
 	ON_COMMAND(ID_MG2, OnMg2)
 	ON_COMMAND(ID_ZOOM, OnZoom)
+	ON_COMMAND(ID_3D, On3d)
 	//}}AFX_MSG_MAP
 	// Standard printing commands
 	ON_COMMAND(ID_FILE_PRINT, CView::OnFilePrint)
@@ -53,10 +54,12 @@ CCDTest002View::CCDTest002View()
 	this->m_MDlg=new CCMDlg();
 	this->m_MDlg2=new CCMDlg2();
 	this->m_MDlg3=new CCMDlg3();
+	this->m_MDlg3D=new CCMDlgFor3D();
 	this->m_iFillFLag=0;
 	this->m_MDlg->m_pView=this;
 	this->m_MDlg2->m_pView2=this;
 	this->m_MDlg3->m_pView3=this;
+	this->m_MDlg3D->m_pView3D=this;
 	this->m_iClipFlag = 0;
 	this->m_iDeleteFlag = 0;
 	this->m_iGetTwoPoint = 0;
@@ -71,6 +74,8 @@ CCDTest002View::~CCDTest002View()
 		delete this->m_MDlg2;
 	if(this->m_MDlg3!=NULL)
 		delete this->m_MDlg3;
+	if(this->m_MDlg3D!=NULL)
+		delete this->m_MDlg3D;
 }
 
 BOOL CCDTest002View::PreCreateWindow(CREATESTRUCT& cs)
@@ -1005,6 +1010,79 @@ void CCDTest002View::MatrixXMatrix(double matrix0[][3], double matrix1[][3])
 	}
 }
 
+/*
+
+//for 3D
+void CCDTest002View::Extern()//拉伸函数
+{
+	double m_Matrix[4][4];
+	double m_Matrix0[4][4];
+
+	GetMatrix3D(m_Matrix, 7, 0, 0, 0.5, 0, 1);
+	GetMatrix3D(m_Matrix, 8, 0, 0, 0.5, 0, 1);
+
+	MatrixXMatrix3D(m_Matrix, m_Matrix0);
+
+	GetNewPoint3D(m_Matrix);
+	Invalidate(TRUE);
+}
+
+void CCDTest002View::GetNewPoint(double m_Matrix[][4])
+{
+	CArray<CPoint, CPoint> m_point_Array_new;
+	CPoint point_new;
+
+	m_point_Array.RemoveAll();
+	m_point_Array1.RemoveAll();
+
+	//生成3D点（齐次坐标）
+	double (*Point0)[4] = new double[m_iPointNum][4];
+	double (*Point1)[4] = new double[m_iPointNum][4];
+	double (*Point2)[4] = new double[m_iPointNum][4];
+	double (*Point3)[4] = new double[m_iPointNum][4];
+
+	for(int i=0; i<m_iPointNum; i++)
+	{
+		//第一组点
+		Point0[i][0] = m_point_Array0.GetAt(i).x;
+		Point0[i][1] = m_point_Array0.GetAt(i).y;
+		Point0[i][2] = 0;//z
+		Point0[i][3] = 1;
+
+		Point1[i][0] = m_point_Array0.GetAt(i).x;
+		Point1[i][1] = m_point_Array0.GetAt(i).y;
+		Point1[i][2] = this->zLength;//从窗口读入的拉伸值
+		Point1[i][3] = 1;
+	}
+
+	//坐标变换
+	for(i=0; i<m_iPointNum; i++)
+	{
+		for(int j=0; j<4; j++)
+		{
+			Point2[i][j] = 0;
+			Point3[i][j] = 0;
+			for(int k=0; k<4; k++)
+			{
+				//老点
+				Point2[i][j] += Point0[i][k]*m_Matrix[k][j];
+				//新点
+				Point3[i][j] += Point1[i][k]*m_Matrix[k][j];
+			}
+		}
+		point_new.x = Point2[i][0]/Point2[i][3];
+		point_new.y = Point2[i][1]/Point2[i][3];
+
+		m_point_Array.Add(point_new);
+
+		point_new.x = Point3[i][0]/Point3[i][3];
+		point_new.y = Point3[i][1]/Point3[i][3];
+		m_point_Array1.Add(point_new);
+	}
+}
+
+//for 3D
+*/
 
 
 void CCDTest002View::OnFillcolor() 
@@ -1120,5 +1198,18 @@ void CCDTest002View::OnZoom()
 		this->m_MDlg3->ShowWindow(TRUE);
 		this->m_MDlg3->m_zoomRatio = 0;
 		this->m_MDlg3->UpdateData(FALSE);
+	}
+}
+
+void CCDTest002View::On3d() 
+{
+	// TODO: Add your command handler code here
+	if(this->m_MDlg3D->GetSafeHwnd()==NULL)
+	{
+		this->m_MDlg3D->Create();
+	}
+	else
+	{
+		this->m_MDlg3D->ShowWindow(TRUE);
 	}
 }
