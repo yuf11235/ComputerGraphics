@@ -17,13 +17,13 @@ Class4=CMainFrame
 ResourceCount=6
 Resource1=IDD_DIALOG3
 Class5=CAboutDlg
-Resource2=IDD_ABOUTBOX
+Resource2=IDR_MAINFRAME
 Class6=CCMDlg
 Resource3=IDD_DIALOG1
 Class7=CCMDlg2
 Resource4=IDD_DIALOG2
 Class8=CCMDlg3
-Resource5=IDR_MAINFRAME
+Resource5=IDD_ABOUTBOX
 Class9=CCMDlg4
 Resource6=IDD_DIALOG4
 
@@ -212,9 +212,21 @@ VirtualFilter=dWC
 [DLG:IDD_DIALOG4]
 Type=1
 Class=CCMDlg4
-ControlCount=2
+ControlCount=14
 Control1=IDOK,button,1342242817
 Control2=IDCANCEL,button,1342242816
+Control3=IDC_STATIC,static,1342308352
+Control4=IDC_STATIC,static,1342308352
+Control5=IDC_STATIC,static,1342308352
+Control6=IDC_STATIC,static,1342308352
+Control7=IDC_STATIC,static,1342308352
+Control8=IDC_EDIT1,edit,1350631552
+Control9=IDC_EDIT2,edit,1350631552
+Control10=IDC_EDIT3,edit,1350631552
+Control11=IDC_COMBO1,combobox,1344340226
+Control12=IDC_EDIT4,edit,1350631552
+Control13=IDC_SPIN1,msctls_updown32,1342177312
+Control14=IDC_SPIN2,msctls_updown32,1342177312
 
 [CLS:CCMDlg4]
 Type=0
@@ -222,5 +234,6 @@ HeaderFile=CMDlg4.h
 ImplementationFile=CMDlg4.cpp
 BaseClass=CDialog
 Filter=D
-LastObject=CCMDlg4
+LastObject=IDC_SPIN1
+VirtualFilter=dWC
 

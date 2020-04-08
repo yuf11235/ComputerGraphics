@@ -29,7 +29,11 @@ public:
 // Dialog Data
 	//{{AFX_DATA(CCMDlg4)
 	enum { IDD = IDD_DIALOG4 };
-		// NOTE: the ClassWizard will add data members here
+	int		m_3DX;
+	int		m_3DY;
+	int		m_3DZ;
+	int		m_3DANGLE;
+	CString	m_ROTATEAXIS;
 	//}}AFX_DATA
 
 

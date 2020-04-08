@@ -15,6 +15,9 @@
 #define IDC_BUTTON1                     1005
 #define IDC_SPIN1                       1006
 #define IDC_BUTTON2                     1008
+#define IDC_COMBO1                      1009
+#define IDC_EDIT4                       1010
+#define IDC_SPIN2                       1011
 #define ID_MG                           32772
 #define ID_FILLCOLOR                    32784
 #define ID_DRAWPOLYLINE                 32785
@@ -35,7 +38,7 @@
 #define _APS_3D_CONTROLS                     1
 #define _APS_NEXT_RESOURCE_VALUE        134
 #define _APS_NEXT_COMMAND_VALUE         32798
-#define _APS_NEXT_CONTROL_VALUE         1009
+#define _APS_NEXT_CONTROL_VALUE         1012
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

@@ -64,6 +64,7 @@ CCDTest002View::CCDTest002View()
 	this->m_iDeleteFlag = 0;
 	this->m_iGetTwoPoint = 0;
 	this->m_iTypeFlag = 0;
+	this->m_zLength = 0;
 }
 
 CCDTest002View::~CCDTest002View()
@@ -1009,6 +1010,186 @@ void CCDTest002View::MatrixXMatrix(double matrix0[][3], double matrix1[][3])
 		}
 	}
 }
+
+
+//for 3D
+//start
+void CCDTest002View::Extern()//拉伸函数
+{
+	double m_Matrix[4][4];
+	double m_Matrix0[4][4];
+
+	GetMatrix3D(m_Matrix, 7, 0, 0, 0.5, 0, 1);
+	GetMatrix3D(m_Matrix, 8, 0, 0, 0.5, 0, 1);
+
+	MatrixXMatrix3D(m_Matrix, m_Matrix0);
+
+	GetNewPoint3D(m_Matrix);
+	Invalidate(TRUE);
+}
+//iFlag：0-移动，1：x轴旋转，2-y轴旋转，3-z轴旋转，4-x镜像，5-y镜像，6-z镜像，7-x错移，8-y错移，9-z错移，10-缩放
+void CCDTest002View::GetMatrix3D(double matrix[][4], int iFlag, double x_dis, double y_dis, double z_dis, double rotateAngle, double dbl_zoom)
+{
+	for(int i=0; i<4; i++)
+	{
+		for(int j=0; j<4; j++)
+		{
+			matrix[i][j] = 0;
+		}
+	}
+	for(i=0; i<4; i++)
+	{
+		matrix[i][i] == 1;
+	}
+	// [[1 0 0 0]
+	//  [0 1 0 0]
+	//  [0 0 1 0]
+	//  [0 0 0 1]]
+	if(iFlag == 0)
+	{
+		matrix[3][0] = x_dis;
+		matrix[3][1] = y_dis;
+		matrix[3][2] = z_dis;
+		// [[1     0     0     0]
+		//  [0     1     0     0]
+		//  [0     0     1     0]
+		//  [x_dis y_dis z_dis 1]]
+	}
+	else if(iFlag == 1)
+	{
+		matrix[1][1] = cos(PI/180 * rotateAngle);
+		matrix[1][2] = sin(PI/180 * rotateAngle);
+		matrix[2][1] = (-1) * sin(PI/180 * rotateAngle);
+		matrix[2][2] = cos(PI/180 * rotateAngle);
+	}
+	else if(iFlag == 2)
+	{
+		matrix[0][0] = cos(PI/180 * rotateAngle);
+		matrix[0][2] = sin(PI/180 * rotateAngle);
+		matrix[2][0] = (-1) * sin(PI/180 * rotateAngle);
+		matrix[2][2] = cos(PI/180 * rotateAngle);
+	}
+	else if(iFlag == 3)
+	{
+		matrix[0][0] = cos(PI/180 * rotateAngle);
+		matrix[1][0] = sin(PI/180 * rotateAngle);
+		matrix[0][1] = (-1) * sin(PI/180 * rotateAngle);
+		matrix[1][1] = cos(PI/180 * rotateAngle);
+	}
+	else if(iFlag == 4)
+	{
+		matrix[2][2] = -1;
+	}
+	else if(iFlag == 5)
+	{
+		matrix[0][0] = -1;
+	}
+	else if(iFlag == 6)
+	{
+		matrix[1][1] = -1;
+	}
+	else if(iFlag == 7)
+	{
+		matrix[1][0] = y_dis;
+		matrix[2][0] = z_dis;
+	}
+	else if(iFlag == 8)
+	{
+		matrix[0][1] = y_dis;
+		matrix[2][1] = z_dis;
+	}
+	else if(iFlag == 9)
+	{
+		matrix[0][2] = y_dis;
+		matrix[1][2] = z_dis;
+	}
+	else if(iFlag == 10)
+	{
+		matrix[3][3] = dbl_zoom;
+	}
+}
+
+void CCDTest002View::MatrixXMatrix3D(double matrix0[][4], double matrix1[][4])
+{
+	double matrix2[4][4];
+
+	for(int i=0; i<4; i++)
+	{
+		for(int j=0; j<4; j++)
+		{
+			matrix2[i][j] = 0.;
+			for(int k=0; k<4; k++)
+			{
+				matrix2[i][j] += matrix0[i][k]*matrix1[k][j];
+			}
+		}
+	}
+	for(i=0; i<4; i++)
+	{
+		for(int j=0; j<4; j++)
+		{
+			matrix0[i][j] = matrix2[i][j];
+		}
+	}
+}
+
+void CCDTest002View::GetNewPoint3D(double m_Matrix[][4])
+{
+	CArray<CPoint, CPoint> m_point_Array_new;
+	CPoint point_new;
+
+	m_point_Array.RemoveAll();
+	m_point_Array1.RemoveAll();
+
+	//生成3D点（齐次坐标）
+	double (*Point0)[4] = new double[m_iPointNum][4];
+	double (*Point1)[4] = new double[m_iPointNum][4];
+	double (*Point2)[4] = new double[m_iPointNum][4];
+	double (*Point3)[4] = new double[m_iPointNum][4];
+
+	for(int i=0; i<m_iPointNum; i++)
+	{
+		//第一组点
+		Point0[i][0] = m_point_Array0.GetAt(i).x;
+		Point0[i][1] = m_point_Array0.GetAt(i).y;
+		Point0[i][2] = 0;//z
+		Point0[i][3] = 1;
+
+		Point1[i][0] = m_point_Array0.GetAt(i).x;
+		Point1[i][1] = m_point_Array0.GetAt(i).y;
+		Point1[i][2] = this->m_zLength;//从窗口读入的拉伸值
+		Point1[i][3] = 1;
+	}
+
+	//坐标变换
+	for(i=0; i<m_iPointNum; i++)
+	{
+		for(int j=0; j<4; j++)
+		{
+			Point2[i][j] = 0;
+			Point3[i][j] = 0;
+			for(int k=0; k<4; k++)
+			{
+				//老点
+				Point2[i][j] += Point0[i][k]*m_Matrix[k][j];
+				//新点
+				Point3[i][j] += Point1[i][k]*m_Matrix[k][j];
+			}
+		}
+		point_new.x = Point2[i][0]/Point2[i][3];
+		point_new.y = Point2[i][1]/Point2[i][3];
+
+		m_point_Array.Add(point_new);
+
+		point_new.x = Point3[i][0]/Point3[i][3];
+		point_new.y = Point3[i][1]/Point3[i][3];
+		m_point_Array1.Add(point_new);
+	}
+}
+//for 3D
+//end
+
+
 
 
 

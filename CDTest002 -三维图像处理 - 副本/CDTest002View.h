@@ -37,6 +37,8 @@ public:
 	CCMDlg4 *m_MDlg4;
 
 	CArray<CPoint, CPoint> m_point_Array;// to store point which pickuped by the left mouse botton
+	CArray<CPoint, CPoint> m_point_Array1;// to store point which copied from m_point_Array
+	CArray<CPoint, CPoint> m_point_Array0;// to store point which copied from m_point_Array
 
 	CPoint pt;
 
@@ -44,6 +46,17 @@ public:
 	int finished;//0-not close; 1-close
 	CPoint pt0, pt1;
 	void DDA_Line(CDC * pDC, CPoint startPoint, CPoint endPoint);
+
+	//for 3d
+	double m_zLength;//拉伸长度
+	double m_dblAngle;//旋转角度
+	int m_iPointNum;
+	int m_iRotateAxis;
+	int m_i3DFlag;//是否已有3D顶点
+	double (*Point0)[4];// = new double[m_iPointNum][4];
+	double (*Point1)[4];// = new double[m_iPointNum][4];
+	double (*Point2)[4];// = new double[m_iPointNum][4];
+	double (*Point3)[4];// = new double[m_iPointNum][4];
 // Operations
 public:
 	int m_iFillFLag;//0-not fill; 1-fill
@@ -62,8 +75,28 @@ public:
 	void GetMatrix(double matrix[][3], int iFlag, double rotateAngle, double x_dis, double y_dis, double dbl_zoom);
 	void GetNewPoint();
 	void MatrixXMatrix(double matrix0[][3], double matrix1[][3]);
+///*
+	// for 3d
+	// double m_zLength;//拉伸长度
+	// double m_dblAngle;//旋转角度
+	// int m_iPointNum;
+	void GetMatrix3D(double matrix[][4], int iFlag, double x_dis, double y_dis, double z_dis, double rotateAngle, double dbl_zoom);
+	//iFlag：0-移动，1：x轴旋转，2-y轴旋转，3-z轴旋转，4-x镜像，5-y镜像，6-z镜像，7-x错移，8-y错移，9-z错移，10-缩放
+	void GetNewPoint3D(double m_Matrix[][4]);
+	void MatrixXMatrix3D(double matrix0[][4], double matrix1[][4]);
 
+	// int m_iRotateAxis;
+	void Extern();//拉伸
+	void Rotate();//旋转
 
+	// int m_i3DFlag;//是否已有3D顶点
+	// double (*Point0)[4];// = new double[m_iPointNum][4];
+	// double (*Point1)[4];// = new double[m_iPointNum][4];
+	// double (*Point2)[4];// = new double[m_iPointNum][4];
+	// double (*Point3)[4];// = new double[m_iPointNum][4];
+
+	//for 3d
+//*/
 
 
 // Overrides

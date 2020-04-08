@@ -247,6 +247,21 @@ FONT 10, "System"
 BEGIN
     DEFPUSHBUTTON   "确定",IDOK,130,7,50,14
     PUSHBUTTON      "取消",IDCANCEL,130,24,50,14
+    LTEXT           "x",IDC_STATIC,14,16,8,8
+    LTEXT           "y",IDC_STATIC,13,30,8,8
+    LTEXT           "extren",IDC_STATIC,11,47,22,8
+    LTEXT           "Axis",IDC_STATIC,10,67,15,8
+    LTEXT           "Angle",IDC_STATIC,119,50,19,8
+    EDITTEXT        IDC_EDIT1,37,13,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,36,30,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,36,46,40,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO1,32,66,48,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT4,109,63,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_ARROWKEYS,77,46,
+                    10,14
+    CONTROL         "Spin2",IDC_SPIN2,"msctls_updown32",UDS_ARROWKEYS,151,62,
+                    10,14
 END
 
 
