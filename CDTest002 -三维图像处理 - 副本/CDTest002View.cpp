@@ -287,18 +287,18 @@ void CCDTest002View::OnDraw(CDC* pDC)
 		this->m_iClipFlag = 0;
 		// this->m_iGetTwoPoint = 0;
 	}
-	if(this->m_point_Array0.GetSize()>1)
-	{
-		CPoint startPoint, endPoint;
-		for(int i=0; i<this->m_point_Array0.GetSize()-1; i++)
-		{
-			startPoint.x = m_point_Array0.GetAt(i).x+100;
-			startPoint.y = m_point_Array0.GetAt(i).y+100;
-			endPoint.x = m_point_Array0.GetAt(i+1).x+100;
-			endPoint.y = m_point_Array0.GetAt(i+1).y+100;
+	// if(this->m_point_Array0.GetSize()>1)
+	// {
+	// 	CPoint startPoint, endPoint;
+	// 	for(int i=0; i<this->m_point_Array0.GetSize()-1; i++)
+	// 	{
+	// 		startPoint.x = m_point_Array0.GetAt(i).x+100;
+	// 		startPoint.y = m_point_Array0.GetAt(i).y+100;
+	// 		endPoint.x = m_point_Array0.GetAt(i+1).x+100;
+	// 		endPoint.y = m_point_Array0.GetAt(i+1).y+100;
 
-			this->DDA_Line(pDC, startPoint, endPoint);
-		}
+	// 		this->DDA_Line(pDC, startPoint, endPoint);
+	// 	}
 		// this->DDA_Line(pDC, endPoint, m_point_Array1.GetAt(0));
 		// for(i=0; i<this->m_point_Array1.GetSize(); i++)
 		// {
@@ -307,40 +307,40 @@ void CCDTest002View::OnDraw(CDC* pDC)
 
 		// 	this->DDA_Line(pDC, startPoint, endPoint);
 		// }
-	}
-	if(this->m_point_Array1.GetSize()>1)
-	{
-		CPoint startPoint, endPoint;
-		for(int i=0; i<this->m_point_Array1.GetSize()-1; i++)
-		{
-			startPoint.x = m_point_Array1.GetAt(i).x+100;
-			startPoint.y = m_point_Array1.GetAt(i).y+100;
-			endPoint.x = m_point_Array1.GetAt(i+1).x+100;
-			endPoint.y = m_point_Array1.GetAt(i+1).y+100;
-
-			this->DDA_Line(pDC, startPoint, endPoint);
-		}
-	}
-	//for 3D
+	// }
 	// if(this->m_point_Array1.GetSize()>1)
 	// {
 	// 	CPoint startPoint, endPoint;
 	// 	for(int i=0; i<this->m_point_Array1.GetSize()-1; i++)
 	// 	{
-	// 		startPoint = m_point_Array1.GetAt(i);
-	// 		endPoint = m_point_Array1.GetAt(i+1);
-
-	// 		this->DDA_Line(pDC, startPoint, endPoint);
-	// 	}
-	// 	this->DDA_Line(pDC, endPoint, m_point_Array1.GetAt(0));
-	// 	for(i=0; i<this->m_point_Array1.GetSize(); i++)
-	// 	{
-	// 		startPoint = m_point_Array.GetAt(i);
-	// 		endPoint = m_point_Array1.GetAt(i);
+	// 		startPoint.x = m_point_Array1.GetAt(i).x+100;
+	// 		startPoint.y = m_point_Array1.GetAt(i).y+100;
+	// 		endPoint.x = m_point_Array1.GetAt(i+1).x+100;
+	// 		endPoint.y = m_point_Array1.GetAt(i+1).y+100;
 
 	// 		this->DDA_Line(pDC, startPoint, endPoint);
 	// 	}
 	// }
+	//for 3D
+	if(this->m_point_Array1.GetSize()>1)
+	{
+		CPoint startPoint, endPoint;
+		for(int i=0; i<this->m_point_Array1.GetSize()-1; i++)
+		{
+			startPoint = m_point_Array1.GetAt(i);
+			endPoint = m_point_Array1.GetAt(i+1);
+
+			this->DDA_Line(pDC, startPoint, endPoint);
+		}
+		this->DDA_Line(pDC, endPoint, m_point_Array1.GetAt(0));
+		for(i=0; i<this->m_point_Array1.GetSize(); i++)
+		{
+			startPoint = m_point_Array.GetAt(i);
+			endPoint = m_point_Array1.GetAt(i);
+
+			this->DDA_Line(pDC, startPoint, endPoint);
+		}
+	}
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -1102,7 +1102,7 @@ void CCDTest002View::GetMatrix3D(double matrix[][4], int iFlag, double x_dis, do
 		{
 			matrix[i][j] = 0;
 		}
-		matrix[i][i] == 1;
+		matrix[i][i] = 1;
 	}
 	// for(i=0; i<4; i++)
 	// {
@@ -1224,8 +1224,8 @@ void CCDTest002View::GetNewPoint3D(double m_Matrix[][4])
 
 		Point1[i][0] = m_point_Array0.GetAt(i).x;
 		Point1[i][1] = m_point_Array0.GetAt(i).y;
-		Point1[i][2] = 200;//从窗口读入的拉伸值
-		// Point1[i][2] = this->m_zLength;//从窗口读入的拉伸值
+		//Point1[i][2] = 200;//从窗口读入的拉伸值
+		Point1[i][2] = this->m_zLength;//从窗口读入的拉伸值
 		Point1[i][3] = 1;
 	}
 
