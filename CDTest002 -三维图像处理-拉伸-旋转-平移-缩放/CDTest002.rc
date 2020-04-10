@@ -246,8 +246,8 @@ STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "对话"
 FONT 10, "System"
 BEGIN
-    DEFPUSHBUTTON   "确定",IDOK,130,7,50,14
-    PUSHBUTTON      "取消",IDCANCEL,130,24,50,14
+    DEFPUSHBUTTON   "确定",IDOK,129,7,50,14
+    PUSHBUTTON      "取消",IDCANCEL,129,24,50,14
     LTEXT           "x",IDC_STATIC,14,16,8,8
     LTEXT           "y",IDC_STATIC,13,30,8,8
     LTEXT           "extren",IDC_STATIC,11,47,22,8
@@ -263,6 +263,8 @@ BEGIN
                     10,14
     CONTROL         "Spin3",IDC_SPIN3,"msctls_updown32",UDS_ARROWKEYS,81,46,
                     10,14
+    LTEXT           "Zoom Ratio",IDC_STATIC,83,13,45,9
+    EDITTEXT        IDC_EDIT5,83,28,40,14,ES_AUTOHSCROLL
 END
 
 
@@ -352,7 +354,7 @@ BEGIN
     IDD_DIALOG4, DIALOG
     BEGIN
         LEFTMARGIN, 7
-        RIGHTMARGIN, 180
+        RIGHTMARGIN, 179
         TOPMARGIN, 7
         BOTTOMMARGIN, 89
     END

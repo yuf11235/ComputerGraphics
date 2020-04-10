@@ -26,6 +26,7 @@ CCMDlg4::CCMDlg4(CWnd* pParent /*=NULL*/)
 	m_3DZ = 0;
 	m_3DANGLE = 0;
 	m_ROTATEAXIS = _T("");
+	m_3DZoomRatio = 0.0;
 	//}}AFX_DATA_INIT
 }
 
@@ -44,6 +45,7 @@ void CCMDlg4::DoDataExchange(CDataExchange* pDX)
 	DDX_Text(pDX, IDC_EDIT3, m_3DZ);
 	DDX_Text(pDX, IDC_EDIT4, m_3DANGLE);
 	DDX_CBString(pDX, IDC_COMBO1, m_ROTATEAXIS);
+	DDX_Text(pDX, IDC_EDIT5, m_3DZoomRatio);
 	//}}AFX_DATA_MAP
 }
 
@@ -54,6 +56,7 @@ BEGIN_MESSAGE_MAP(CCMDlg4, CDialog)
 	ON_NOTIFY(NM_OUTOFMEMORY, IDC_SPIN4, OnOutofmemorySpin4)
 	ON_NOTIFY(UDN_DELTAPOS, IDC_SPIN2, OnDeltaposSpin2)
 	ON_NOTIFY(UDN_DELTAPOS, IDC_SPIN3, OnDeltaposSpin3)
+	ON_EN_CHANGE(IDC_EDIT5, OnChangeEdit5)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -71,16 +74,27 @@ void CCMDlg4::OnOutofmemorySpin1(NMHDR* pNMHDR, LRESULT* pResult)
 void CCMDlg4::OnOK() 
 {
 	// TODO: Add extra validation here
-	// UpdateData(TRUE);
+	UpdateData(TRUE);
 
-	// this->m_pView4->m_zLength = this->m_3DZ;
+	this->m_pView4->m_i3DZoomRatio = this->m_3DZoomRatio;
+	// double m_Matrix[4][4];
+	// double m_Matrix0[4][4];
+	// GetMatrix(m_Matrix, 0, 0, this->m_BottomRightPoint.x - this->m_TopLeftPoint.x, this->m_BottomRightPoint.y - this->m_TopLeftPoint.y, 0);
+	// GetNewPoint();
+	// this->m_point_Array0.RemoveAll();
+	// this->m_point_Array0.Append(this->m_point_Array);
+	// this->m_pView4->GetMatrix3D(m_Matrix, 10, 0, 0, 0, 0, 1/this->m_3DZoomRatio);
+	// GetMatrix3D(m_Matrix0, 0, m_BottomRightPoint.x - m_TopLeftPoint.x, m_BottomRightPoint.y - m_TopLeftPoint.y, 0, 0, 1);
+	// this->m_pView4->GetNewPoint3D(m_Matrix);
+	// this->m_pView4->Extern();
+	this->m_pView4->Zoom();
 
 	// this->m_pView4->Extern();
 
-	// this->m_pView4->Invalidate(TRUE);
+	this->m_pView4->Invalidate(TRUE);
 
-	// UpdateData(FALSE);
-	CDialog::OnOK();
+	UpdateData(FALSE);
+	//CDialog::OnOK();
 }
 
 
@@ -127,4 +141,15 @@ void CCMDlg4::OnDeltaposSpin3(NMHDR* pNMHDR, LRESULT* pResult)
 
 	UpdateData(FALSE);
 	*pResult = 0;
+}
+
+void CCMDlg4::OnChangeEdit5() 
+{
+	// TODO: If this is a RICHEDIT control, the control will not
+	// send this notification unless you override the CDialog::OnInitDialog()
+	// function and call CRichEditCtrl().SetEventMask()
+	// with the ENM_CHANGE flag ORed into the mask.
+	
+	// TODO: Add your control notification handler code here
+	
 }

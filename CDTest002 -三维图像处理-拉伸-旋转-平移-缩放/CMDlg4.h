@@ -34,6 +34,7 @@ public:
 	int		m_3DZ;
 	int		m_3DANGLE;
 	CString	m_ROTATEAXIS;
+	double	m_3DZoomRatio;
 	//}}AFX_DATA
 
 
@@ -54,6 +55,7 @@ protected:
 	afx_msg void OnOutofmemorySpin4(NMHDR* pNMHDR, LRESULT* pResult);
 	afx_msg void OnDeltaposSpin2(NMHDR* pNMHDR, LRESULT* pResult);
 	afx_msg void OnDeltaposSpin3(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnChangeEdit5();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

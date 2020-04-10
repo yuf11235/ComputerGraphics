@@ -2,7 +2,7 @@
 
 [General Info]
 Version=1
-LastClass=CCDTest002View
+LastClass=CCMDlg4
 LastTemplate=CDialog
 NewFileInclude1=#include "stdafx.h"
 NewFileInclude2=#include "CDTest002.h"
@@ -19,11 +19,11 @@ Resource1=IDD_DIALOG3
 Class5=CAboutDlg
 Resource2=IDD_ABOUTBOX
 Class6=CCMDlg
-Resource3=IDD_DIALOG1
+Resource3=IDD_DIALOG2
 Class7=CCMDlg2
-Resource4=IDD_DIALOG2
+Resource4=IDR_MAINFRAME
 Class8=CCMDlg3
-Resource5=IDR_MAINFRAME
+Resource5=IDD_DIALOG1
 Class9=CCMDlg4
 Resource6=IDD_DIALOG4
 
@@ -213,7 +213,7 @@ VirtualFilter=dWC
 [DLG:IDD_DIALOG4]
 Type=1
 Class=CCMDlg4
-ControlCount=14
+ControlCount=16
 Control1=IDOK,button,1342242817
 Control2=IDCANCEL,button,1342242816
 Control3=IDC_STATIC,static,1342308352
@@ -228,6 +228,8 @@ Control11=IDC_COMBO1,combobox,1344340226
 Control12=IDC_EDIT4,edit,1350631552
 Control13=IDC_SPIN2,msctls_updown32,1342177312
 Control14=IDC_SPIN3,msctls_updown32,1342177312
+Control15=IDC_STATIC,static,1342308352
+Control16=IDC_EDIT5,edit,1350631552
 
 [CLS:CCMDlg4]
 Type=0
@@ -235,6 +237,6 @@ HeaderFile=CMDlg4.h
 ImplementationFile=CMDlg4.cpp
 BaseClass=CDialog
 Filter=D
-LastObject=IDC_SPIN2
+LastObject=IDC_EDIT5
 VirtualFilter=dWC
 

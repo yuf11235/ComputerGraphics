@@ -54,6 +54,7 @@ public:
 	int m_iRotateAxis;
 	int m_i3DFlag;//是否已有3D顶点
 	int m_i3DTypeFlag;//1-移动，2-放缩
+	double m_i3DZoomRatio;
 	double (*Point0)[4];// = new double[m_iPointNum][4];
 	double (*Point1)[4];// = new double[m_iPointNum][4];
 	double (*Point2)[4];// = new double[m_iPointNum][4];
@@ -89,6 +90,7 @@ public:
 	// int m_iRotateAxis;
 	void Extern();//拉伸
 	void Rotate();//旋转
+	void Zoom();//旋转
 
 	// int m_i3DFlag;//是否已有3D顶点
 	// double (*Point0)[4];// = new double[m_iPointNum][4];

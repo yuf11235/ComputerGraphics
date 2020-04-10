@@ -71,6 +71,7 @@ CCDTest002View::CCDTest002View()
 	this->m_i3DFlag = 0;
 	this->m_dblAngle = 0;
 	this->m_iRotateAxis = 0;
+	this->m_i3DZoomRatio = 0;
 }
 
 CCDTest002View::~CCDTest002View()
@@ -532,7 +533,19 @@ void CCDTest002View::OnLButtonUp(UINT nFlags, CPoint point)
 		}
 		else if(this->m_iTypeFlag == 3 || this->m_iTypeFlag == 4)
 		{
-
+			// if(this->m_i3DTypeFlag == 2)
+			// {
+			// 	double m_Matrix[4][4];
+			// 	// double m_Matrix0[4][4];
+			// 	// GetMatrix(m_Matrix, 0, 0, this->m_BottomRightPoint.x - this->m_TopLeftPoint.x, this->m_BottomRightPoint.y - this->m_TopLeftPoint.y, 0);
+			// 	// GetNewPoint();
+			// 	// this->m_point_Array0.RemoveAll();
+			// 	// this->m_point_Array0.Append(this->m_point_Array);
+			// 	GetMatrix3D(m_Matrix, 10, 0, 0, 0, 0, this->m_i3DZoomRatio);
+			// 	// GetMatrix3D(m_Matrix0, 0, m_BottomRightPoint.x - m_TopLeftPoint.x, m_BottomRightPoint.y - m_TopLeftPoint.y, 0, 0, 1);
+			// 	GetNewPoint3D(m_Matrix);
+			// 	Extern();
+			// }
 			this->m_iGetTwoPoint = 0;
 		}
 	}
@@ -1298,6 +1311,20 @@ void CCDTest002View::Rotate()
 
 	GetNewPoint3D(m_Matrix);
 	Invalidate(TRUE);
+}
+
+void CCDTest002View::Zoom()
+{
+	double m_Matrix[4][4];
+	// double m_Matrix0[4][4];
+	// GetMatrix(m_Matrix, 0, 0, this->m_BottomRightPoint.x - this->m_TopLeftPoint.x, this->m_BottomRightPoint.y - this->m_TopLeftPoint.y, 0);
+	// GetNewPoint();
+	// this->m_point_Array0.RemoveAll();
+	// this->m_point_Array0.Append(this->m_point_Array);
+	GetMatrix3D(m_Matrix, 10, 0, 0, 0, 0, 1/this->m_i3DZoomRatio);
+	// GetMatrix3D(m_Matrix0, 0, m_BottomRightPoint.x - m_TopLeftPoint.x, m_BottomRightPoint.y - m_TopLeftPoint.y, 0, 0, 1);
+	GetNewPoint3D(m_Matrix);
+	Extern();
 }
 //for 3D
 //end

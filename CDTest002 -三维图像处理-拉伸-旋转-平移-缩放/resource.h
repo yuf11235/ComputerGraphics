@@ -20,6 +20,7 @@
 #define IDC_SPIN2                       1011
 #define IDC_SPIN3                       1012
 #define IDC_SPIN4                       1013
+#define IDC_EDIT5                       1014
 #define ID_MG                           32772
 #define ID_FILLCOLOR                    32784
 #define ID_DRAWPOLYLINE                 32785
@@ -41,7 +42,7 @@
 #define _APS_3D_CONTROLS                     1
 #define _APS_NEXT_RESOURCE_VALUE        134
 #define _APS_NEXT_COMMAND_VALUE         32799
-#define _APS_NEXT_CONTROL_VALUE         1014
+#define _APS_NEXT_CONTROL_VALUE         1015
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
