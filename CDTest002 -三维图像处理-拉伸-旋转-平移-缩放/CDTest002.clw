@@ -15,15 +15,15 @@ Class3=CCDTest002View
 Class4=CMainFrame
 
 ResourceCount=6
-Resource1=IDD_DIALOG3
+Resource1=IDD_DIALOG2
 Class5=CAboutDlg
-Resource2=IDD_ABOUTBOX
+Resource2=IDR_MAINFRAME
 Class6=CCMDlg
-Resource3=IDD_DIALOG2
+Resource3=IDD_DIALOG1
 Class7=CCMDlg2
-Resource4=IDR_MAINFRAME
+Resource4=IDD_DIALOG3
 Class8=CCMDlg3
-Resource5=IDD_DIALOG1
+Resource5=IDD_ABOUTBOX
 Class9=CCMDlg4
 Resource6=IDD_DIALOG4
 
@@ -137,9 +137,9 @@ Command15=ID_ONMOVE
 Command16=ID_MIRROR
 Command17=ID_MG2
 Command18=ID_ZOOM
-Command19=ID_BIN
-Command20=ID_3D
-Command21=ID_3DMOVE
+Command19=ID_3D
+Command20=ID_3DMOVE
+Command21=ID_BIN
 CommandCount=21
 
 [DLG:IDD_DIALOG1]
@@ -237,6 +237,6 @@ HeaderFile=CMDlg4.h
 ImplementationFile=CMDlg4.cpp
 BaseClass=CDialog
 Filter=D
-LastObject=IDC_EDIT5
+LastObject=IDC_SPIN2
 VirtualFilter=dWC
 
