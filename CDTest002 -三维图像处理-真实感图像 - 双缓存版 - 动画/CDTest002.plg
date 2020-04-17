@@ -1,0 +1,115 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: CDTest002 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\yuf\AppData\Local\Temp\RSP6BFB.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/CDTest002.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp"
+]
+Creating command line "cl.exe @C:\Users\yuf\AppData\Local\Temp\RSP6BFB.tmp" 
+Creating temporary file "C:\Users\yuf\AppData\Local\Temp\RSP6C0C.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/CDTest002.pdb" /debug /machine:I386 /out:"Debug/CDTest002.exe" /pdbtype:sept 
+".\Debug\CDTest002.obj"
+".\Debug\CDTest002Doc.obj"
+".\Debug\CDTest002View.obj"
+".\Debug\CMDlg.obj"
+".\Debug\CMDlg2.obj"
+".\Debug\CMDlg3.obj"
+".\Debug\CMDlg4.obj"
+".\Debug\CMDlg5.obj"
+".\Debug\MainFrm.obj"
+".\Debug\StdAfx.obj"
+".\Debug\CDTest002.res"
+]
+Creating command line "link.exe @C:\Users\yuf\AppData\Local\Temp\RSP6C0C.tmp"
+<h3>Output Window</h3>
+Compiling...
+CDTest002View.cpp
+d:\microsoft visual studio\myprojects\computergraphics\cdtest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\cdtest002view.h(60) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+d:\microsoft visual studio\myprojects\computergraphics\cdtest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\cdtest002view.h(60) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+d:\microsoft visual studio\myprojects\computergraphics\cdtest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\cdtest002view.h(60) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+d:\microsoft visual studio\myprojects\computergraphics\cdtest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\cdtest002view.h(146) : warning C4200: nonstandard extension used : zero-sized array in struct/union
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(384) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(385) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(386) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(387) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(390) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(391) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(392) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(393) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(402) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(403) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(415) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(416) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(417) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(427) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(428) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(429) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(430) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(433) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(434) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(435) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(436) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(445) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(446) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(458) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(459) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(460) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(475) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(476) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(477) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(478) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(484) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(485) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(486) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(487) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(493) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(494) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(495) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(496) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(499) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(500) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(501) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(502) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(515) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(516) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(517) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(1331) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(1332) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(1334) : warning C4244: '/=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(1335) : warning C4244: '/=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(1534) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(1535) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(1542) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+D:\Microsoft Visual Studio\MyProjects\ComputerGraphics\CDTest002 -三维图像处理-真实感图像 - 双缓存版 - 副本\CDTest002View.cpp(1543) : warning C4244: '=' : conversion from 'double' to 'long', possible loss of data
+Linking...
+Creating temporary file "C:\Users\yuf\AppData\Local\Temp\RSP6DE1.tmp" with contents
+[
+/nologo /o"Debug/CDTest002.bsc" 
+".\Debug\StdAfx.sbr"
+".\Debug\CDTest002.sbr"
+".\Debug\CDTest002Doc.sbr"
+".\Debug\CDTest002View.sbr"
+".\Debug\CMDlg.sbr"
+".\Debug\CMDlg2.sbr"
+".\Debug\CMDlg3.sbr"
+".\Debug\CMDlg4.sbr"
+".\Debug\CMDlg5.sbr"
+".\Debug\MainFrm.sbr"]
+Creating command line "bscmake.exe @C:\Users\yuf\AppData\Local\Temp\RSP6DE1.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+CDTest002.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
